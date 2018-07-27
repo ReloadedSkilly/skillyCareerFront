@@ -1,0 +1,12 @@
+{
+    "name": "vincent/skilly_career",
+    "authors": [
+        {
+            "name": "Vincent Zerbib",
+            "email": "vincentzerbib@gmail.com"
+        }
+    ],
+    "require": {
+        "twig/twig": "^2.0"
+    }
+}
