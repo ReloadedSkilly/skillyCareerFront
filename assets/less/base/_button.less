@@ -1,14 +1,22 @@
 .btn-skilly{
     text-transform: uppercase;
+    font-family: @secondfont;
+    font-weight:bold;
+}
+.btn{
     &--md{
         height: 32px;
         font-size: 15px;
     }
     &--lg{
-        height: 50px;
         font-size: 18px;
+        padding: 10px 40px;
     }
 }
 .btn-rounded{
-    border-radius: 5px;
+    .border-radius(5px);
+}
+.btn-gray{
+    border:1.32px solid @grayishBlue;
+    color: @grayishBlue;
 }
