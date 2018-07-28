@@ -26,17 +26,18 @@ switch ($page) {
       'seo' => array(
         'title' => 'home',
       ),
-      // 'person' => array(
-      //   'name' => 'Romain'
-      // )
     );
     echo $twig->render('home.twig', $values);
     break;
   case 'welcome':
     $values = array(
-      'contact' => array(
-        'name' => 'Romain',
-        'email' => 'moro.romain@gmail.com'
+      'user' => array(
+        'firstname' => 'Jean',
+        'lastname' => 'Veuplusse',
+        'job' => 'Compagnon sur site nucléaire',
+        ),
+      'jobs' => array(
+          'title' => 'Compagnon sur site nucléaire', 'Conducteur de travaux', 'Suivi de chantiers'
       )
     );
     echo $twig->render('welcome.twig', $values);

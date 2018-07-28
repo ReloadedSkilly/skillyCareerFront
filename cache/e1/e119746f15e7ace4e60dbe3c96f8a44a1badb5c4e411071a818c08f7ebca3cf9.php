@@ -25,11 +25,12 @@ class __TwigTemplate_2c563f221444a1c6a80d2b6d6eebb4f2dbcc309260e92b3f4684399b85f
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
     <!-- style -->
     <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\" integrity=\"sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u\" crossorigin=\"anonymous\">
+    <link href=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css\" rel=\"stylesheet\" />
     <link rel=\"stylesheet/less\" type=\"text/css\" href=\"./assets/less/styles.less\" />
-    <!-- script -->
-    <script src=\"//cdnjs.cloudflare.com/ajax/libs/less.js/3.7.1/less.min.js\" ></script>
+
+    <!-- jquery -->
     <script src=\"https://code.jquery.com/jquery-3.3.1.min.js\" integrity=\"sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=\" crossorigin=\"anonymous\"></script>
-    <script src=\"//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js\"></script>
+
 </head>
 ";
     }
@@ -65,11 +66,12 @@ class __TwigTemplate_2c563f221444a1c6a80d2b6d6eebb4f2dbcc309260e92b3f4684399b85f
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
     <!-- style -->
     <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\" integrity=\"sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u\" crossorigin=\"anonymous\">
+    <link href=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css\" rel=\"stylesheet\" />
     <link rel=\"stylesheet/less\" type=\"text/css\" href=\"./assets/less/styles.less\" />
-    <!-- script -->
-    <script src=\"//cdnjs.cloudflare.com/ajax/libs/less.js/3.7.1/less.min.js\" ></script>
+
+    <!-- jquery -->
     <script src=\"https://code.jquery.com/jquery-3.3.1.min.js\" integrity=\"sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=\" crossorigin=\"anonymous\"></script>
-    <script src=\"//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js\"></script>
+
 </head>
 ", "partials/head.twig", "/Applications/MAMP/htdocs/skillyCareerFront/templates/partials/head.twig");
     }

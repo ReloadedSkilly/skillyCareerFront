@@ -49,7 +49,11 @@ class __TwigTemplate_b6b2d4877b324d59f54e0b14a1c709b1a2bd766c740238ae92a74b7a32b
         // line 20
         echo "
 </body>
+
+<!-- footer -->
 ";
+        // line 24
+        $this->loadTemplate("partials/footer.twig", "layout.twig", 24)->display($context);
     }
 
     // line 17
@@ -72,7 +76,7 @@ class __TwigTemplate_b6b2d4877b324d59f54e0b14a1c709b1a2bd766c740238ae92a74b7a32b
 
     public function getDebugInfo()
     {
-        return array (  59 => 18,  56 => 17,  50 => 20,  48 => 17,  44 => 15,  40 => 13,  36 => 11,  34 => 10,  28 => 6,  26 => 5,  20 => 1,);
+        return array (  63 => 18,  60 => 17,  56 => 24,  50 => 20,  48 => 17,  44 => 15,  40 => 13,  36 => 11,  34 => 10,  28 => 6,  26 => 5,  20 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -106,6 +110,9 @@ class __TwigTemplate_b6b2d4877b324d59f54e0b14a1c709b1a2bd766c740238ae92a74b7a32b
 {% endblock %}
 
 </body>
+
+<!-- footer -->
+{% include 'partials/footer.twig' %}
 ", "layout.twig", "/Applications/MAMP/htdocs/skillyCareerFront/templates/layout.twig");
     }
 }

@@ -1,5 +1,64 @@
-{% block main %}
-    <h1>Welcome</h1>
+{#
+Page 2 - welcome user
+invision:2.1
+#}
 
-    </p>
+{% extends 'layout.twig' %}
+
+{% block content %}
+<div class="container padding-block--md">
+
+    <main>
+
+        <!-- title -->
+        <div class="title-section darkblue text-center">
+            <h1 class="text-uppercase font-size--lg font-weight--bold">Bienvenue sur vinci talent</h1>
+            <h2 class="font-size--normal font-weight--md">La plateforme pour piloter votre carrière</h2>
+        </div>
+
+        <!-- user infos -->
+        <div class="padding-block--md">
+
+            <div class="profil-card bg--white display-flex align-items--center">
+
+                <img src="./assets/img/profil.svg" alt="profil user">
+
+                <div class="profil-info">
+
+                    <h3 class="blue font-size--md">{{user.firstname}} {{user.lastname}}</h3>
+
+                    <select class="custom-select" name="selectjob">
+                        {% for job in jobs %}
+                        <option value="{{jobs.title}}">{{jobs.title}}</option>
+                        {% endfor %}
+                    </select>
+                    <div class="d-block">
+                        <button class="btn btn-reset darkgray text-underline" type="button" name="button">Je signale une erreur</button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script type="text/javascript">
+
+    jQuery(document).ready(function($){
+
+        // select 2
+        $('.custom-select').select2({
+            placeholder: "Votre métier",
+            allowClear: true,
+            width: '350px'
+        });
+
+    });
+
+</script>
+
 {% endblock %}

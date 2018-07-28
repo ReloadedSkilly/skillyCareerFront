@@ -47,8 +47,9 @@ class __TwigTemplate_e687357cfebe51e1157038d15ed3e20cab0b17e28c7aacf7d0257714ad7
     <div class=\"container\">
         <div class=\"display-flex align-items--center justify-content--space-between\">
             <!-- logo -->
-            <img src=\"./assets/img/logo-white.svg\" alt=\"logo\">
-
+            <a href=\"/skillyCareerFront/\">
+                <img src=\"./assets/img/logo-white.svg\" alt=\"logo\">
+            </a>
             <!-- menu -->
             <nav class=\"main-menu\">
                 <ul class=\"display-flex\">
@@ -118,8 +119,9 @@ class __TwigTemplate_e687357cfebe51e1157038d15ed3e20cab0b17e28c7aacf7d0257714ad7
     <div class=\"container\">
         <div class=\"display-flex align-items--center justify-content--space-between\">
             <!-- logo -->
-            <img src=\"./assets/img/logo-white.svg\" alt=\"logo\">
-
+            <a href=\"/skillyCareerFront/\">
+                <img src=\"./assets/img/logo-white.svg\" alt=\"logo\">
+            </a>
             <!-- menu -->
             <nav class=\"main-menu\">
                 <ul class=\"display-flex\">
