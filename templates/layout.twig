@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+
+<!-- head -->
+{% include 'partials/head.twig' %}
+
+<body>
+
+<!-- header -->
+{% if title == 'home' %}
+    {% include 'partials/header-home.twig' %}
+{% else %}
+    {% include 'partials/header.twig' %}
+{% endif %}
+
+<!-- content -->
+{% block content %}
+
+{% endblock %}
+
+</body>

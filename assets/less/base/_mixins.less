@@ -18,3 +18,20 @@
 	-moz-border-radius:        @radius;
 	border-radius:             @radius;
 }
+
+.display-flex(@display: flex) {
+	display: ~"-webkit-@{display}";
+	display: ~"-ms-@{display}box"; // IE10 uses -ms-flexbox
+	display: ~"-ms-@{display}"; // IE11
+	display: @display;
+}
+.justify-content(@position) {
+  -webkit-justify-content: @position;
+      -ms-justify-content: @position;
+          justify-content: @position;
+}
+.align-items(@position) {
+  -webkit-align-items: @position;
+      -ms-align-items: @position;
+          align-items: @position;
+}
