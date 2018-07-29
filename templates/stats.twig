@@ -1,0 +1,83 @@
+{#
+Page - statistiques
+invision:4.5 & 4.6
+#}
+
+{% extends 'layout.twig' %}
+
+{% block content %}
+<div class="container padding-block--base">
+
+    <main>
+
+        <div class="bg--white">
+
+            {% include 'partials/profil-menu.twig' %}
+
+            <div class="padding-content">
+                <!-- evaluation header -->
+                <div class="evaluation-header display-flex align-items--center justify-content--space-between">
+
+                    <!-- user info -->
+                    <div class="user-header display-flex align-items--center">
+                        <img src="./assets/img/icons/profil_small.svg" alt="welcome screen 1">
+                        <div class="user-info">
+                            <h1 class="font-size--sm">{{user.firstname}} {{user.lastname}}<br/> {{user.job}}</h1>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- title section favoris-->
+                <div class="section-title text-center padding-block--base">
+
+                    <p class="font-size--base font-weight--md">
+                        <img src="./assets/img/icons/favoris.svg" alt="favoris title">
+                        Mes favoris
+                    </p>
+
+                    <!-- helpers -->
+                    <div class="helpers-side">
+
+                    </div>
+
+                </div>
+
+                <!-- title section alertes-->
+
+                <div class="section-title text-center padding-block--base">
+
+                    <p class="font-size--base font-weight--md">
+                        <img src="./assets/img/icons/alertes.svg" alt="alertes title">
+                        Mes alertes
+                    </p>
+
+                </div>
+
+                <!-- title section tuteurs-->
+
+                <div class="section-title text-center padding-block--base">
+
+                    <p class="font-size--base font-weight--md">
+                        <img src="./assets/img/icons/tuteur.svg" alt="tuteurs title">
+                        Devenir tuteur
+                    </p>
+
+                </div>
+
+
+
+                <div class="padding-block--md text-center">
+                    <p class="font-size--base font-weight--md">Validez-vous votre auto-évaluation ?</p>
+                    <button type="button" class="btn btn-skilly btn--lg btn-rounded btn-blue font-weight--semibold" type="button" name="button" data-toggle="modal" data-target="#sendModal">Envoyer à mon manager</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+{% endblock %}

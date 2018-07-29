@@ -77,4 +77,89 @@ switch ($page) {
     );
     echo $twig->render('evaluation-summary.twig', $values);
     break;
+  case 'stats':
+    $values = array(
+      'user' => array(
+        'firstname' => 'Jean',
+        'lastname' => 'Veuplusse',
+        'job' => 'Compagnon sur site nucléaire',
+        ),
+      'capacities' => array(
+          '1' => "Accompagner et former les nouveaux arrivants",
+          '2' => "Alerter sa hiérarchie en situation d'urgence",
+          '3' => "Communiquer les informations nécessaires à la production en situation d'urgence",
+          '4' => "Comprendre et transmettre un message oral",
+          '5' => "Participer activement à un projet collectif (travaux, quart d'heure sécurité)"
+      )
+    );
+    echo $twig->render('stats.twig', $values);
+    break;
+  case 'profil':
+    $values = array(
+      'user' => array(
+        'firstname' => 'Jean',
+        'lastname' => 'Veuplusse',
+        'job' => 'Compagnon sur site nucléaire',
+        ),
+      'capacities' => array(
+          '1' => "Accompagner et former les nouveaux arrivants",
+          '2' => "Alerter sa hiérarchie en situation d'urgence",
+          '3' => "Communiquer les informations nécessaires à la production en situation d'urgence",
+          '4' => "Comprendre et transmettre un message oral",
+          '5' => "Participer activement à un projet collectif (travaux, quart d'heure sécurité)"
+      )
+    );
+    echo $twig->render('profil.twig', $values);
+    break;
+  case 'bouger':
+    $values = array(
+      'user' => array(
+        'firstname' => 'Jean',
+        'lastname' => 'Veuplusse',
+        'job' => 'Compagnon sur site nucléaire',
+        ),
+      'capacities' => array(
+          '1' => "Accompagner et former les nouveaux arrivants",
+          '2' => "Alerter sa hiérarchie en situation d'urgence",
+          '3' => "Communiquer les informations nécessaires à la production en situation d'urgence",
+          '4' => "Comprendre et transmettre un message oral",
+          '5' => "Participer activement à un projet collectif (travaux, quart d'heure sécurité)"
+      )
+    );
+    echo $twig->render('bouger.twig', $values);
+    break;
+    case 'perfectionner':
+      $values = array(
+        'user' => array(
+          'firstname' => 'Jean',
+          'lastname' => 'Veuplusse',
+          'job' => 'Compagnon sur site nucléaire',
+          ),
+        'capacities' => array(
+            '1' => "Accompagner et former les nouveaux arrivants",
+            '2' => "Alerter sa hiérarchie en situation d'urgence",
+            '3' => "Communiquer les informations nécessaires à la production en situation d'urgence",
+            '4' => "Comprendre et transmettre un message oral",
+            '5' => "Participer activement à un projet collectif (travaux, quart d'heure sécurité)"
+        )
+      );
+      echo $twig->render('perfectionner.twig', $values);
+      break;
+    case 'evoluer':
+      $values = array(
+        'user' => array(
+          'firstname' => 'Jean',
+          'lastname' => 'Veuplusse',
+          'job' => 'Compagnon sur site nucléaire',
+          ),
+        'capacities' => array(
+            '1' => "Accompagner et former les nouveaux arrivants",
+            '2' => "Alerter sa hiérarchie en situation d'urgence",
+            '3' => "Communiquer les informations nécessaires à la production en situation d'urgence",
+            '4' => "Comprendre et transmettre un message oral",
+            '5' => "Participer activement à un projet collectif (travaux, quart d'heure sécurité)"
+        )
+      );
+      echo $twig->render('evoluer.twig', $values);
+      break;
 }

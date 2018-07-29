@@ -1,5 +1,5 @@
 {#
-Page 2 - evaluation summary
+Page - evaluation summary
 invision:4.1, 4.2, 4.3, 4.4, 4.4.1
 #}
 
@@ -263,8 +263,8 @@ invision:4.1, 4.2, 4.3, 4.4, 4.4.1
 
 </div>
 
-<!-- The modal -->
-<div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+<!-- send modal -->
+<div class="modal fade" id="sendModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -273,22 +273,10 @@ invision:4.1, 4.2, 4.3, 4.4, 4.4.1
                 </button>
             </div>
             <div class="modal-body">
-                <h4 class="font-size--base font-weight--normal text-center">Merci de nous signaler toute erreur concernant vos informations</h4>
-                <div class="profil-overview">
-                    <div class="overview-item-wrapper">
-                        <div class="overview-item-detail text-center font-size--sm">
-                            {{user.firstname}} {{user.lastname}}
-                        </div>
-                    </div>
-                    <div class="overview-item-wrapper">
-                        <div class="overview-item-detail text-center font-size--sm">
-                            {{user.job}}
-                        </div>
-                    </div>
+                <div class="text-center padding-block--md">
+                    <img src="./assets/img/icons/mail.svg" alt="mail icon">
                 </div>
-                <div class="text-center">
-                    <button type="button" class="btn btn-skilly btn--lg btn-blue btn-rounded font-weight--semibold" data-dismiss="modal">Signaler</button>
-                </div>
+                <h4 class="font-size--base font-weight--normal text-center">Votre auto-évaluation a bien été envoyée à votre manager</h4>
             </div>
 
         </div>
