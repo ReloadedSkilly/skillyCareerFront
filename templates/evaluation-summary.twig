@@ -1,0 +1,298 @@
+{#
+Page 2 - evaluation summary
+invision:4.1, 4.2, 4.3, 4.4, 4.4.1
+#}
+
+{% extends 'layout.twig' %}
+
+{% block content %}
+<div class="container padding-block--base">
+
+    <main>
+
+        <div class="bg--white padding-content">
+
+            <!-- evaluation header -->
+            <div class="evaluation-header display-flex align-items--center justify-content--space-between">
+
+                <!-- user info -->
+                <div class="user-header display-flex align-items--center">
+                    <img src="./assets/img/icons/profil_small.svg" alt="welcome screen 1">
+                    <div class="user-info">
+                        <h1 class="font-size--sm">{{user.firstname}} {{user.lastname}}<br/> {{user.job}}</h1>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- title section -->
+            <div class="section-title text-center padding-block--base">
+
+                <p class="font-size--base font-weight--md">Votre auto-évaluation</p>
+
+                <!-- helpers -->
+                <div class="helpers-side">
+
+                </div>
+            </div>
+
+            <!-- capacité relationnelle collapse -->
+            <div class="collapse-wrapper">
+                <div class="collapse-button">
+                    <a class="font-size--sm font-weight--semibold blue collapsed" role="button" data-toggle="collapse" href="#capacityRelation" aria-expanded="false" aria-controls="capacityRelation">
+                        Capacités relationnelles
+                    </a>
+                </div>
+                <div class="collapse clear-float" id="capacityRelation">
+                    <table class="evaluation-grid">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>NC</th>
+                                <th>0</th>
+                                <th>1</th>
+                                <th>2</th>
+                                <th>3</th>
+                            </tr>
+                        </thead>
+                        {% for capacity in capacities %}
+                        <tr>
+                            <td>{{capacity}}</td>
+                            <td>
+                                <div class="custom-radio">
+                                    <label>
+                                        <input type="radio" name="radio-group-{{loop.index}}">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="custom-radio">
+                                    <label>
+                                        <input type="radio" name="radio-group-{{loop.index}}">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="custom-radio">
+                                    <label>
+                                        <input type="radio" name="radio-group-{{loop.index}}">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="custom-radio">
+                                    <label>
+                                        <input type="radio" name="radio-group-{{loop.index}}">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="custom-radio">
+                                    <label>
+                                        <input type="radio" name="radio-group-{{loop.index}}">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                    <div class="float-right">
+                        <img src="./assets/img/icons/edit.svg" alt="edit button">
+                        <button class="btn btn-reset text-uppercase green font-weight--bold" type="button" name="button">Corriger</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- capacité organisationnelle collapse -->
+            <div class="collapse-wapper bg--verylightgrey">
+                <div class="collapse-button">
+                    <a class="font-size--sm font-weight--semibold blue collapsed" role="button" data-toggle="collapse" href="#capacityOrga" aria-expanded="false" aria-controls="capacityOrga">
+                        Capacités organisationnelle
+                    </a>
+                </div>
+                <div class="collapse clear-float" id="capacityOrga">
+                    <table class="evaluation-grid">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>NC</th>
+                                <th>0</th>
+                                <th>1</th>
+                                <th>2</th>
+                                <th>3</th>
+                            </tr>
+                        </thead>
+                        {% for capacity in capacities %}
+                        <tr>
+                            <td>{{capacity}}</td>
+                            <td>
+                                <div class="custom-radio">
+                                    <label>
+                                        <input type="radio" name="radio-group-{{loop.index}}">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="custom-radio">
+                                    <label>
+                                        <input type="radio" name="radio-group-{{loop.index}}">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="custom-radio">
+                                    <label>
+                                        <input type="radio" name="radio-group-{{loop.index}}">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="custom-radio">
+                                    <label>
+                                        <input type="radio" name="radio-group-{{loop.index}}">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="custom-radio">
+                                    <label>
+                                        <input type="radio" name="radio-group-{{loop.index}}">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                    <div class="float-right">
+                        <img src="./assets/img/icons/edit.svg" alt="edit button">
+                        <button class="btn btn-reset text-uppercase green font-weight--bold" type="button" name="button">Corriger</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Compétences techniques collapse -->
+            <div class="collapse-wrapper bg--verylightgrey">
+                <div class="collapse-button">
+                    <a class="font-size--sm font-weight--semibold blue collapsed" role="button" data-toggle="collapse" href="#compTech" aria-expanded="false" aria-controls="compTech">
+                        Compétences techniques
+                    </a>
+                </div>
+                <div class="collapse clear-float" id="compTech">
+                    <table class="evaluation-grid">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>NC</th>
+                                <th>0</th>
+                                <th>1</th>
+                                <th>2</th>
+                                <th>3</th>
+                            </tr>
+                        </thead>
+                        {% for capacity in capacities %}
+                        <tr>
+                            <td>{{capacity}}</td>
+                            <td>
+                                <div class="custom-radio">
+                                    <label>
+                                        <input type="radio" name="radio-group-{{loop.index}}">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="custom-radio">
+                                    <label>
+                                        <input type="radio" name="radio-group-{{loop.index}}">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="custom-radio">
+                                    <label>
+                                        <input type="radio" name="radio-group-{{loop.index}}">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="custom-radio">
+                                    <label>
+                                        <input type="radio" name="radio-group-{{loop.index}}">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="custom-radio">
+                                    <label>
+                                        <input type="radio" name="radio-group-{{loop.index}}">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                    <div class="float-right">
+                        <img src="./assets/img/icons/edit.svg" alt="edit button">
+                        <button class="btn btn-reset text-uppercase green font-weight--bold" type="button" name="button">Corriger</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="padding-block--md text-center">
+                <p class="font-size--base font-weight--md">Validez-vous votre auto-évaluation ?</p>
+                <button type="button" class="btn btn-skilly btn--lg btn-rounded btn-blue font-weight--semibold" type="button" name="button" data-toggle="modal" data-target="#sendModal">Envoyer à mon manager</button>
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+<!-- The modal -->
+<div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <img src="./assets/img/icons/close.svg" alt="close button">
+                </button>
+            </div>
+            <div class="modal-body">
+                <h4 class="font-size--base font-weight--normal text-center">Merci de nous signaler toute erreur concernant vos informations</h4>
+                <div class="profil-overview">
+                    <div class="overview-item-wrapper">
+                        <div class="overview-item-detail text-center font-size--sm">
+                            {{user.firstname}} {{user.lastname}}
+                        </div>
+                    </div>
+                    <div class="overview-item-wrapper">
+                        <div class="overview-item-detail text-center font-size--sm">
+                            {{user.job}}
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button type="button" class="btn btn-skilly btn--lg btn-blue btn-rounded font-weight--semibold" data-dismiss="modal">Signaler</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

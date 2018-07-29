@@ -37,28 +37,44 @@ switch ($page) {
         'job' => 'Compagnon sur site nucléaire',
         ),
       'jobs' => array(
-          'title' => 'Compagnon sur site nucléaire', 'Conducteur de travaux', 'Suivi de chantiers'
-      )
+          '0'=>'Compagnon sur site nucléaire',
+          '1'=>'Conducteur de travaux',
+          '2'=>'Suivi de chantiers')
     );
     echo $twig->render('welcome.twig', $values);
     break;
-  case 'contact':
+  case 'evaluation':
     $values = array(
-      'contact' => array(
-        'name' => 'Romain',
-        'email' => 'moro.romain@gmail.com'
+      'user' => array(
+        'firstname' => 'Jean',
+        'lastname' => 'Veuplusse',
+        'job' => 'Compagnon sur site nucléaire',
+        ),
+      'capacities' => array(
+          '1' => "Accompagner et former les nouveaux arrivants",
+          '2' => "Alerter sa hiérarchie en situation d'urgence",
+          '3' => "Communiquer les informations nécessaires à la production en situation d'urgence",
+          '4' => "Comprendre et transmettre un message oral",
+          '5' => "Participer activement à un projet collectif (travaux, quart d'heure sécurité)"
       )
     );
-    echo $twig->render('contact.twig', $values);
+    echo $twig->render('evaluation.twig', $values);
     break;
-  case 'presentation':
-    echo $twig->render('presentation.twig');
-    break;
-  case 'company':
-    echo $twig->render('company.twig');
-    break;
-  // default:
-  //   header('HTTP/1.0 404 Not Found');
-  //   echo $twig->render('404.twig');
+  case 'evaluation-summary':
+    $values = array(
+      'user' => array(
+        'firstname' => 'Jean',
+        'lastname' => 'Veuplusse',
+        'job' => 'Compagnon sur site nucléaire',
+        ),
+      'capacities' => array(
+          '1' => "Accompagner et former les nouveaux arrivants",
+          '2' => "Alerter sa hiérarchie en situation d'urgence",
+          '3' => "Communiquer les informations nécessaires à la production en situation d'urgence",
+          '4' => "Comprendre et transmettre un message oral",
+          '5' => "Participer activement à un projet collectif (travaux, quart d'heure sécurité)"
+      )
+    );
+    echo $twig->render('evaluation-summary.twig', $values);
     break;
 }

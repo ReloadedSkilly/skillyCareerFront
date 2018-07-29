@@ -1,6 +1,6 @@
 {#
 Page 2 - welcome user
-invision:2.1
+invision:2.1 & 2.2
 #}
 
 {% extends 'layout.twig' %}
@@ -13,51 +13,80 @@ invision:2.1
         <!-- title -->
         <div class="title-section darkblue text-center">
             <h1 class="text-uppercase font-size--lg font-weight--bold">Bienvenue sur vinci talent</h1>
-            <h2 class="font-size--normal font-weight--md">La plateforme pour piloter votre carrière</h2>
+            <h2 class="font-size--base font-weight--md">La plateforme pour piloter votre carrière</h2>
         </div>
 
         <!-- user infos -->
         <div class="padding-block--md">
-
             <div class="profil-card bg--white display-flex align-items--center">
-
                 <img src="./assets/img/profil.svg" alt="profil user">
-
                 <div class="profil-info">
-
                     <h3 class="blue font-size--md">{{user.firstname}} {{user.lastname}}</h3>
-
                     <select class="custom-select" name="selectjob">
                         {% for job in jobs %}
-                        <option value="{{jobs.title}}">{{jobs.title}}</option>
+                        <option value="{{job}}">{{job}}</option>
                         {% endfor %}
                     </select>
+
                     <div class="d-block">
-                        <button class="btn btn-reset darkgray text-underline" type="button" name="button">Je signale une erreur</button>
+                        <button class="btn btn-reset darkgray text-underline" type="button" name="button" data-toggle="modal" data-target="#errorModal">Je signale une erreur</button>
                     </div>
-
                 </div>
-
             </div>
-
         </div>
 
+        <!-- validate section -->
+        <p class="text-center padding-block--small">Ceci est votre première connexion, merci de valider vos informations <br/>ou de signaler toute erreur éventuelle avant de vous auto-évaluer.</p>
+        <div class="padding-block--small text-center">
+            <a href="/skillyCareerFront/?p=evaluation" class="btn btn-skilly btn--lg btn-rounded btn-blue font-weight--semibold">m'auto-évaluer</a>
+        </div>
     </main>
 
 </div>
 
+<!-- The modal -->
+<div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <img src="./assets/img/icons/close.svg" alt="close button">
+                </button>
+            </div>
+            <div class="modal-body">
+                <h4 class="font-size--base font-weight--normal text-center">Merci de nous signaler toute erreur concernant vos informations</h4>
+                <div class="profil-overview">
+                    <div class="overview-item-wrapper">
+                        <div class="overview-item-detail text-center font-size--sm">
+                            {{user.firstname}} {{user.lastname}}
+                        </div>
+                    </div>
+                    <div class="overview-item-wrapper">
+                        <div class="overview-item-detail text-center font-size--sm">
+                            {{user.job}}
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button type="button" class="btn btn-skilly btn--lg btn-blue btn-rounded font-weight--semibold" data-dismiss="modal">Signaler</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
 <script type="text/javascript">
 
-    jQuery(document).ready(function($){
+jQuery(document).ready(function($){
 
-        // select 2
-        $('.custom-select').select2({
-            placeholder: "Votre métier",
-            allowClear: true,
-            width: '350px'
-        });
-
+    // select 2
+    $('.custom-select').select2({
+        placeholder: "Votre métier",
+        width: '350px'
     });
+
+});
 
 </script>
 
