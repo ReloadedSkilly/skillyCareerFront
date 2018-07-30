@@ -6,17 +6,17 @@
 
 <body>
 
-<!-- header -->
-{% if title == 'home' %}
-    {% include 'partials/header-home.twig' %}
-{% else %}
-    {% include 'partials/header.twig' %}
-{% endif %}
+    <!-- header -->
+    {% block header %}
 
-<!-- content -->
-{% block content %}
+        {% include 'partials/header.twig' %}
+        
+    {% endblock %}
 
-{% endblock %}
+    <!-- content -->
+    {% block content %}
+
+    {% endblock %}
 
 </body>
 
