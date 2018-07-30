@@ -201,7 +201,14 @@ invision:4.1, 4.2, 4.3, 4.4, 4.4.1
             <div class="padding-block--md text-center confirm-block">
                 <p class="font-size--base font-weight--md padding-block--small">Confirmez-vous l’envoi à votre manager ?</p>
                 <button type="button" class="btn btn-skilly btn--lg btn-rounded btn-green font-weight--semibold" type="button" name="button" id="cancelBtn">non</button>
-                <button type="button" class="btn btn-skilly btn--lg btn-rounded btn-green font-weight--semibold" type="button" name="button" data-toggle="modal" data-target="#sendModal">oui</button>
+                <button type="button" class="btn btn-skilly btn--lg btn-rounded btn-green font-weight--semibold" type="button" name="button" data-toggle="modal" data-target="#sendModal" id="validateBtn">oui</button>
+            </div>
+
+            <div class="padding-block--md text-center download-block">
+                <a download="" class="btn btn-skilly btn-rounded font-weight--semibold btn-download">
+                    <img src="./assets/img/icons/telecharger.svg" alt="close button">
+                    Télécharger
+                </a>
             </div>
 
         </div>
@@ -247,6 +254,7 @@ jQuery(document).ready(function($){
 
     // edit button toggle
     var editBtn=$('.btn-edit');
+
     editBtn.click(function() {
         $(this).toggle();
         $(this).parent().find('.btn-validate').toggle();
@@ -267,17 +275,29 @@ jQuery(document).ready(function($){
     var sendBtn=$('#sendBtn');
     var sendBlock=$('.send-block');
     var confirmBlock=$('.confirm-block');
+
     sendBtn.click(function(){
         sendBlock.toggle();
         confirmBlock.toggle();
-    })
+    });
 
     // cancel send
     var cancelBtn=$('#cancelBtn');
+
     cancelBtn.click(function(){
         confirmBlock.toggle();
         sendBlock.toggle();
-    })
+    });
+
+    //validate btn display upload btn
+    var confirmBtn=$('#validateBtn');
+    var downloadBlock=$('.download-block');
+
+    confirmBtn.click(function(){
+        confirmBlock.toggle();
+        downloadBlock.toggle();
+    });
+
 });
 
 </script>
