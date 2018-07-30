@@ -4,12 +4,44 @@
         height: 50px;
         background: @blue;
         text-align: center;
+        margin-right: 1px;
+        position: relative;
         a{
             text-transform: uppercase;
             font-weight:500;
             font-size: 14px;
             color: white;
-            line-height: 50px;
+            line-height: 16px;
+            width: 100%;
+            height: 100%;
+            .display-flex();
+            .justify-content(center);
+            .align-items(center);
+            img{
+                padding-right: 10px;
+                padding-left: 10px;
+            }
+            span{
+                text-align: left;
+            }
         }
+    }
+}
+.notifications{
+    width: 23px;
+    height: 23px;
+    background-color: @red;
+    position: absolute;
+    top: 3px;
+    left: 19px;
+    .border-radius(100%);
+    span{
+        font-size: 15px;
+        font-weight: bold;
+        color: white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        .translate(-50%,-50%);
     }
 }

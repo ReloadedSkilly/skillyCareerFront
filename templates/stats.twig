@@ -8,7 +8,10 @@ invision:4.5 & 4.6
 {% block content %}
 <div class="container padding-block--base">
 
-    <main>
+    <main class="relative">
+
+        <!-- tips box -->
+        {% include 'partials/tips.twig' %}
 
         <div class="bg--white">
 
@@ -35,11 +38,6 @@ invision:4.5 & 4.6
                         <img src="./assets/img/icons/favoris.svg" alt="favoris title">
                         Mes favoris
                     </p>
-
-                    <!-- helpers -->
-                    <div class="helpers-side">
-
-                    </div>
 
                 </div>
 
