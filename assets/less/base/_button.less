@@ -14,6 +14,7 @@
     &--lg{
         font-size: 18px;
         padding: 10px 40px;
+        height: 50px;
     }
 }
 .btn-rounded{
@@ -36,6 +37,15 @@
         border:1px solid @blue;
     }
 }
+
+.btn-green{
+    background-color: @green;
+    color: white;
+    &:hover{
+        background-color: @darkGreen;
+        color: white;
+    }
+}
 .btn-icon{
     background: none;
     border:none;
@@ -44,4 +54,12 @@
 
 .btn-reset{
     padding:0;
+    &:hover{
+        color: inherit;
+    }
+}
+.btn-group{
+    .btn{
+        margin-right: 50px;
+    }
 }

@@ -2,10 +2,11 @@
     height: 40px;
     width: 40px;
     position: absolute;
-    right: 42px;
-    top: 580px;
+    right: -13px;
+    top: 45%;
     background-color: @darkGreen;
     .border-radius(0px);
+    z-index: 999;
     &:not(.collapsed){
         display: none;
     }
@@ -15,14 +16,6 @@
         left: 50%;
         .translate(-50%,-50%);
     }
-    // .btn{
-    //     height: 100%;
-    //     width: 100%;
-    //     display: block;
-    //     &:not(.collapsed){
-    //         display: none;
-    //     }
-    // }
     &:after{
         content: "";
         border: 9px outset transparent;
@@ -37,8 +30,9 @@
     width: 300px;
     background-color: @green;
     position: absolute;
-    right: 42px;
-    top: 311px;
+    right: -13px;
+    top: 20%;
+    z-index: 999;
     &:after{
         content: "";
         border: 9px outset transparent;
