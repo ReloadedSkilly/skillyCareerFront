@@ -1,0 +1,27 @@
+.tutor-section{
+    max-width: 795px;
+    margin: 0 auto;
+    border: 2px solid #13C9A0;
+    .border-radius(5px);
+    padding:28px;
+}
+.survey-question{
+    .display-flex();
+    .justify-content(space-between);
+    .align-items(center);
+    border-top: 1px solid @green;
+    padding:15px 0;
+    &:first-of-type{
+        border-top: none;
+    }
+    .question{
+        color: @green;
+        font-size: 16px;
+        font-weight: 500;
+        .radio-text{
+            &:first-of-type{
+                margin-right: 5px;
+            }
+        }
+    }
+}

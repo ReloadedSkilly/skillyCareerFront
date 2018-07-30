@@ -52,3 +52,27 @@
       background: @green;
     }
 }
+.radio-text{
+    display: inline-block;
+     label {
+      display: inline-block;
+      width: 50px;
+      height: 25px;
+      padding: 0 10px;
+      background-color: #D3D3D3;
+      transition: all 0.3s;
+      text-transform: uppercase;
+      color: white;
+      line-height: 25px;
+      cursor: pointer;
+      .border-radius(2px);
+    }
+
+     input[type="radio"] {
+      display: none;
+    }
+
+     input[type="radio"]:checked + label {
+      background-color:@green;
+    }
+}

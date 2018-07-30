@@ -15,59 +15,255 @@ invision:4.5 & 4.6
 
         <div class="bg--white">
 
+            <!-- sub-menu -->
             {% include 'partials/profil-menu.twig' %}
 
             <div class="padding-content">
-                <!-- evaluation header -->
-                <div class="evaluation-header display-flex align-items--center justify-content--space-between">
 
-                    <!-- user info -->
-                    <div class="user-header display-flex align-items--center">
-                        <img src="./assets/img/icons/profil_small.svg" alt="welcome screen 1">
-                        <div class="user-info">
-                            <h1 class="font-size--sm">{{user.firstname}} {{user.lastname}}<br/> {{user.job}}</h1>
+                <!-- user info -->
+                <div class="user-header display-flex align-items--center">
+                    <img src="./assets/img/icons/profil_small.svg" alt="welcome screen">
+                    <div class="user-info">
+                        <h1 class="font-size--sm">{{user.firstname}} {{user.lastname}}<br/> {{user.job}}</h1>
+                    </div>
+                </div>
+
+                <!-- devenir tuteur -->
+                <div class="padding-block--md">
+                    <div class="tutor-section">
+                        <div class="section-title text-center">
+                            <p class="font-size--base font-weight--md">
+                                <img src="./assets/img/icons/tuteur.svg" alt="favoris title">
+                                Devenir tuteur
+                            </p>
+                        </div>
+                        <div class="padding-block--small">
+                            <p>Suite à votre évaluation vous avez été identifié comme tuteur potentiel sur des compétences.</p>
+                            <p><strong>Souhaitez-vous devenir tuteur ?</strong></p>
+                            <div class="survey-form">
+                                <form action="" method="post">
+                                    <div class="survey-question">
+                                        <p class="question">
+                                            <i class="fa fa-arrow-right"></i>
+                                            Réaliser un ouvrage béton à partir de banches de hauteur standard
+                                        </p>
+                                        <div class="radio-group">
+                                            <div class="radio-text">
+                                                <input type="radio" id="no-1" name="q1" value="no">
+                                                <label for="no-1">non</label>
+                                            </div>
+                                            <div class="radio-text">
+                                                <input type="radio" id="yes-1" name="q1" value="yes">
+                                                <label for="yes-1">oui</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="survey-question">
+                                        <p class="question">
+                                            <i class="fa fa-arrow-right"></i>
+                                            Réaliser les coffrages traditionnels simple (bois)
+                                        </p>
+                                        <div class="radio-group">
+                                            <div class="radio-text">
+                                                <input type="radio" id="no-2" name="q2" value="no">
+                                                <label for="no-2">non</label>
+                                            </div>
+                                            <div class="radio-text">
+                                                <input type="radio" id="yes-2" name="q2" value="yes">
+                                                <label for="yes-2">oui</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="padding-block--base">
+                                        <p class="text-center font-size--xs">Après validation, vous pouvez modifier vos choix dans votre page profil.</p>
+                                    </div>
+                                    <div class="text-center padding-block--sm">
+                                        <button type="button" class="btn btn-skilly btn--lg btn-green btn-rounded font-weight--semibold" data-dismiss="modal">Valider</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- section stats-->
+
+                <div class="section-title text-center padding-block--base">
+                    <h2 class="font-size--base font-weight--md">
+                        Statistiques
+                    </h2>
+                </div>
+
+                <div class="graph-content">
+                    <img class="img-responsive" src="./assets/img/graph.png" alt="graph demo">
+                </div>
+
+
+                <!-- details evaluation -->
+                <div class="section-title text-center padding-block--base relative">
+                    <h2 class="font-size--base font-weight--md">
+                        Détail de votre évaluation
+                    </h2>
+                    <!-- legends -->
+                    <div class="table-legends">
+                        <div class="legend-item green-square">
+                            Compétences maitrisées
+                        </div>
+                        <div class="legend-item orange-square">
+                            Compétences à renforcer
+                        </div>
+                    </div>
+                </div>
+
+                <!-- capacité relationnelle collapse -->
+                <div class="summary-content">
+                    <div class="collapse-wrapper clear-float">
+                        <div class="collapse-button">
+                            <a class="font-size--sm font-weight--semibold blue collapsed" role="button" data-toggle="collapse" href="#capacityRelation" aria-expanded="false" aria-controls="capacityRelation">
+                                Capacités relationnelles
+                                <!-- indicators -->
+                                <div class="count-wrapper">
+                                    <div class="count-item green-square">
+                                        <span>4</span>
+                                    </div>
+                                    <div class="count-item orange-square">
+                                        <span>1</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="collapse clear-float nopadding" id="capacityRelation">
+                            <!-- evaluation grid (for editing) -->
+                            <table class="evaluation-grid">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>NC</th>
+                                        <th>0</th>
+                                        <th>1</th>
+                                        <th>2</th>
+                                        <th>3</th>
+                                    </tr>
+                                </thead>
+                                {% for capacity in capacities %}
+                                <tr>
+                                    <td>{{capacity}}</td>
+                                    <td>
+                                        <div class="custom-radio">
+                                            <label>
+                                                <input type="radio" name="radio-group-{{loop.index}}">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </div>
+                                        <div class="marker">
+                                            <span>
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="custom-radio">
+                                            <label>
+                                                <input type="radio" name="radio-group-{{loop.index}}">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </div>
+                                        <div class="marker">
+                                            <span>
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="custom-radio">
+                                            <label>
+                                                <input type="radio" name="radio-group-{{loop.index}}">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </div>
+                                        <div class="marker">
+                                            <span>
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="custom-radio">
+                                            <label>
+                                                <input type="radio" name="radio-group-{{loop.index}}">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </div>
+                                        <div class="marker">
+                                            <span>
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="custom-radio">
+                                            <label>
+                                                <input type="radio" name="radio-group-{{loop.index}}">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </div>
+                                        <div class="marker checked">
+                                            <span>
+                                            </span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </table>
+
+                        </div>
+                    </div>
+
+                    <!-- capacité organisationnelle collapse -->
+                    <div class="collapse-wrapper bg--verylightgrey">
+                        <div class="collapse-button">
+                            <a class="font-size--sm font-weight--semibold blue collapsed" role="button" data-toggle="collapse" href="#capacityOrga" aria-expanded="false" aria-controls="capacityOrga">
+                                Capacités organisationnelle
+                                <!-- indicators -->
+                                <div class="count-wrapper">
+                                    <div class="count-item green-square">
+                                        <span>4</span>
+                                    </div>
+                                    <div class="count-item orange-square">
+                                        <span>1</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="collapse clear-float" id="capacityOrga">
+
+                        </div>
+                    </div>
+
+                    <!-- Compétences techniques collapse -->
+                    <div class="collapse-wrapper bg--verylightgrey">
+                        <div class="collapse-button">
+                            <a class="font-size--sm font-weight--semibold blue collapsed" role="button" data-toggle="collapse" href="#compTech" aria-expanded="false" aria-controls="compTech">
+                                Compétences techniques
+                                <!-- indicators -->
+                                <div class="count-wrapper">
+                                    <div class="count-item green-square">
+                                        <span>4</span>
+                                    </div>
+                                    <div class="count-item orange-square">
+                                        <span>1</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="collapse clear-float" id="compTech">
+
                         </div>
                     </div>
 
                 </div>
 
-                <!-- title section favoris-->
-                <div class="section-title text-center padding-block--base">
-
-                    <p class="font-size--base font-weight--md">
-                        <img src="./assets/img/icons/favoris.svg" alt="favoris title">
-                        Mes favoris
-                    </p>
-
-                </div>
-
-                <!-- title section alertes-->
-
-                <div class="section-title text-center padding-block--base">
-
-                    <p class="font-size--base font-weight--md">
-                        <img src="./assets/img/icons/alertes.svg" alt="alertes title">
-                        Mes alertes
-                    </p>
-
-                </div>
-
-                <!-- title section tuteurs-->
-
-                <div class="section-title text-center padding-block--base">
-
-                    <p class="font-size--base font-weight--md">
-                        <img src="./assets/img/icons/tuteur.svg" alt="tuteurs title">
-                        Devenir tuteur
-                    </p>
-
-                </div>
-
-
-
                 <div class="padding-block--md text-center">
-                    <p class="font-size--base font-weight--md">Validez-vous votre auto-évaluation ?</p>
-                    <button type="button" class="btn btn-skilly btn--lg btn-rounded btn-blue font-weight--semibold" type="button" name="button" data-toggle="modal" data-target="#sendModal">Envoyer à mon manager</button>
+                    <a download="" class="btn btn-skilly btn-rounded font-weight--semibold btn-download">
+                        <img src="./assets/img/icons/telecharger.svg" alt="close button">
+                        Télécharger
+                    </a>
                 </div>
 
             </div>
@@ -77,5 +273,19 @@ invision:4.5 & 4.6
     </main>
 
 </div>
+
+<script type="text/javascript">
+jQuery(document).ready(function($){
+
+    // collapse background
+    var collapseBtn = $('.collapse-button a');
+
+    collapseBtn.click(function() {
+        $(this).parents('.collapse-wrapper').toggleClass('bg--verylightgray');
+    });
+
+});
+
+</script>
 
 {% endblock %}

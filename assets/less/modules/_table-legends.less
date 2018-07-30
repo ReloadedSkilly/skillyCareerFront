@@ -1,0 +1,32 @@
+.table-legends{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    .translateY(-50%);
+    .legend-item{
+        font-size: 14px;
+        position: relative;
+        &:before{
+            content:"";
+            position: absolute;
+            height: 12px;
+            width: 12px;
+            border-width: 2px;
+            border-style: solid;
+            border-radius: 2px;
+            left: -20px;
+            top: 50%;
+            .translateY(-50%);
+        }
+        &.green-square{
+            &:before{
+                border-color: @green;
+            }
+        }
+        &.orange-square{
+            &:before{
+                border-color: @orange;
+            }
+        }
+    }
+}

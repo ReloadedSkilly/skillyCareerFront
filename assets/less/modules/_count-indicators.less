@@ -1,0 +1,32 @@
+.count-wrapper{
+    position: absolute;
+    right: 35px;
+    top: 50%;
+    .translateY(-50%);
+    .display-flex();
+    .count-item{
+        height: 26px;
+        width: 26px;
+        border-width: 2px;
+        border-style:solid;
+        .border-radius(2px);
+        position: relative;
+        margin-right: 14px;
+        font-size: 14px;
+        font-weight: bold;
+        &.green-square{
+            color: @green;
+            border-color: @green;
+        }
+        &.orange-square{
+            color: @orange;
+            border-color: @orange;
+        }
+        span{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            .translate(-50%,-50%);
+        }
+    }
+}
