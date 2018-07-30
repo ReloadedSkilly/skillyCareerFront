@@ -17,12 +17,13 @@ invision:2.1 & 2.2
         </div>
 
         <!-- user infos -->
-        <div class="padding-block--md">
+        <div class="padding-block--lg">
             <div class="profil-card bg--white display-flex align-items--center">
                 <img src="./assets/img/profil.svg" alt="profil user">
                 <div class="profil-info">
                     <h3 class="blue font-size--md">{{user.firstname}} {{user.lastname}}</h3>
                     <select class="custom-select" name="selectjob">
+                        <option></option>
                         {% for job in jobs %}
                         <option value="{{job}}">{{job}}</option>
                         {% endfor %}
@@ -31,15 +32,18 @@ invision:2.1 & 2.2
                     <div class="d-block">
                         <button class="btn btn-reset darkgray text-underline" type="button" name="button" data-toggle="modal" data-target="#errorModal">Je signale une erreur</button>
                     </div>
+
                 </div>
             </div>
+
+            <!-- validate section -->
+            <p class="text-center padding-block--base">Ceci est votre première connexion, merci de valider vos informations <br/>ou de signaler toute erreur éventuelle avant de vous auto-évaluer.</p>
+            <div class="padding-block--base text-center">
+                <a href="/skillyCareerFront/?p=evaluation" class="btn btn-skilly btn--lg btn-rounded btn-blue font-weight--semibold">m'auto-évaluer</a>
+            </div>
+
         </div>
 
-        <!-- validate section -->
-        <p class="text-center padding-block--small">Ceci est votre première connexion, merci de valider vos informations <br/>ou de signaler toute erreur éventuelle avant de vous auto-évaluer.</p>
-        <div class="padding-block--small text-center">
-            <a href="/skillyCareerFront/?p=evaluation" class="btn btn-skilly btn--lg btn-rounded btn-blue font-weight--semibold">m'auto-évaluer</a>
-        </div>
     </main>
 
 </div>
@@ -57,12 +61,12 @@ invision:2.1 & 2.2
                 <h4 class="font-size--base font-weight--normal text-center">Merci de nous signaler toute erreur concernant vos informations</h4>
                 <div class="profil-overview">
                     <div class="overview-item-wrapper">
-                        <div class="overview-item-detail text-center font-size--sm">
+                        <div class="overview-item-detail text-center font-size--sm verydarkblue">
                             {{user.firstname}} {{user.lastname}}
                         </div>
                     </div>
                     <div class="overview-item-wrapper">
-                        <div class="overview-item-detail text-center font-size--sm">
+                        <div class="overview-item-detail text-center font-size--sm verydarkblue">
                             {{user.job}}
                         </div>
                     </div>
@@ -71,7 +75,6 @@ invision:2.1 & 2.2
                     <button type="button" class="btn btn-skilly btn--lg btn-blue btn-rounded font-weight--semibold" data-dismiss="modal">Signaler</button>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
