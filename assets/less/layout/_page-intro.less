@@ -1,24 +1,44 @@
 .welcome-content{
-    max-width: 480px;
-    max-height: 600px;
+    width: 480px;
+    height: 600px;
     position: absolute;
     left: 50%;
     top: 50%;
+    overflow:hidden;
     .translate(-50%,-50%);
+    .btn{
+        position: absolute;
+        left: 50%;
+        bottom: 5%;
+        .translateX(-50%);
+    }
     .welcome-wrapper{
         padding:45px 18px;
         .border-radius(6px);
         h1,h2{
             margin:16px 0;
+            font-weight: normal;
+        }
+    }
+    .carousel-inner{
+        height: 600px;
+        .item{
+            img{
+                width: 250px;
+                margin: 0 auto;
+                height: auto;
+                display: block;
+            }
         }
     }
 }
 
 .welcome-slide{
     .carousel-indicators{
-        position: initial;
+        position: absolute;
         margin:20px 0;
         left: 0;
+        bottom: 22%;
         width:100%;
     }
 }
