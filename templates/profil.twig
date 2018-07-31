@@ -15,8 +15,8 @@ invision:4.7
             {% include 'partials/profil-menu.twig' %}
 
             <div class="padding-content">
-                <!-- evaluation header -->
-                <div class="evaluation-header display-flex align-items--center justify-content--space-between">
+                <!--  header -->
+                <div class="display-flex align-items--center justify-content--space-between">
 
                     <!-- user info -->
                     <div class="user-header display-flex align-items--center">
@@ -28,50 +28,197 @@ invision:4.7
 
                 </div>
 
-                <!-- title section favoris-->
-                <div class="section-title text-center padding-block--base">
+                <div class="padding-block--md">
 
-                    <p class="font-size--base font-weight--md">
-                        <img src="./assets/img/icons/favoris.svg" alt="favoris title">
-                        Mes favoris
-                    </p>
+                    <!-- title section favoris-->
+                    <div class="section-title title-icon text-center padding-block--base">
+
+                        <p class="font-size--base font-weight--md">
+                            <img src="./assets/img/icons/favoris.svg" alt="favoris title">
+                            Mes favoris
+                        </p>
+
+                    </div>
+
+                    <!-- evoluer group -->
+                    <div class="profil-section">
+                        <h2 class="text-left font-size--sm font-weight--semibold">Evoluer</h2>
+                        <div class="collapse-wrapper">
+                            <div class="collapse-button">
+                                <a class="font-size--sm font-weight--semibold blue collapsed" role="button" data-toggle="collapse" href="#metier1" aria-expanded="false" aria-controls="capacityRelation">
+                                    Grutier à tour mobile H/F
+                                    <p class="font-weight--normal">Boulogne Billancourt, Île-de-France</p>
+                                </a>
+                                <button class="btn btn-icon btn-reset btn-delete" type="button" name="button">
+                                    <i class="fa fa-times green font-size--sm"></i>
+                                </button>
+                            </div>
+                            <div class="collapse" id="metier1">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- bouger group -->
+                    <div class="profil-section">
+                        <h2 class="text-left font-size--sm font-weight--semibold">Bouger</h2>
+                        <div class="collapse-wrapper">
+                            <div class="collapse-button">
+                                <a class="font-size--sm font-weight--semibold blue collapsed" role="button" data-toggle="collapse" href="#metier1" aria-expanded="false" aria-controls="capacityRelation">
+                                    Grutier à tour mobile H/F
+                                    <p class="font-weight--normal">Boulogne Billancourt, Île-de-France</p>
+                                </a>
+                                <button class="btn btn-icon btn-reset btn-delete" type="button" name="button">
+                                    <i class="fa fa-times green font-size--sm"></i>
+                                </button>
+                            </div>
+                            <div class="collapse" id="metier1">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- perfectionner group -->
+                    <div class="profil-section">
+                        <h2 class="text-left font-size--sm font-weight--semibold">Me perfectionner dans mon métier</h2>
+                        <div class="collapse-wrapper">
+                            <div class="collapse-button">
+                                <a class="font-size--sm font-weight--semibold blue collapsed" role="button" data-toggle="collapse" href="#metier1" aria-expanded="false" aria-controls="capacityRelation">
+                                    Grutier à tour mobile H/F
+                                    <p class="font-weight--normal">Boulogne Billancourt, Île-de-France</p>
+                                </a>
+                                <button class="btn btn-icon btn-reset btn-delete" type="button" name="button">
+                                    <i class="fa fa-times green font-size--sm"></i>
+                                </button>
+                            </div>
+                            <div class="collapse" id="metier1">
+
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
 
-                <!-- title section alertes-->
+                <div class="alert-section">
 
-                <div class="section-title text-center padding-block--base">
+                    <!-- title section alertes-->
 
-                    <p class="font-size--base font-weight--md">
-                        <img src="./assets/img/icons/alertes.svg" alt="alertes title">
-                        Mes alertes
-                    </p>
+                    <div class="section-title title-icon text-center padding-block--base">
 
+                        <p class="font-size--base font-weight--md">
+                            <img src="./assets/img/icons/alertes.svg" alt="alertes title">
+                            Mes alertes
+                        </p>
+
+                    </div>
+
+                    <div class="alert-item">
+                        <div class="area-wrapper font-size--sm">
+                            <span class="green font-weight--semibold">Alerte région</span>
+                            Hauts de France
+                        </div>
+                        <button class="btn btn-icon btn-reset btn-delete" type="button" name="button">
+                            <i class="fa fa-times green font-size--sm"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- create alert form -->
+                <div class="alert-form bg--green">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-4">
+                            <h3 class="white font-weight--bold text-uppercase font-size--sm">Créer une alerte</h3>
+                        </div>
+                        <div class="col-xs-12 col-md-8">
+                            <p class="white font-size--xs"><i>Merci de remplir un ou plusieurs champs</i></p>
+                            <form class="bg--green" action="index.html" method="post">
+                                <div class="form-group">
+                                    <input type="text" name="city" placeholder="Ville">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="region" placeholder="Région">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="country" placeholder="Pays">
+                                </div>
+                                <button class="btn btn-icon" type="button" name="button">
+                                    <img src="./assets/img/icons/alerte_small.svg" alt="alert">
+                                    Activer l'alerte
+                                </button>
+                            </form>
+                        </div>
+
+                    </div>
                 </div>
 
                 <!-- title section tuteurs-->
 
-                <div class="section-title text-center padding-block--base">
+                <div class="section-title title-icon text-center padding-block--md">
 
                     <p class="font-size--base font-weight--md">
                         <img src="./assets/img/icons/tuteur.svg" alt="tuteurs title">
                         Devenir tuteur
                     </p>
-
                 </div>
 
-
-
-                <div class="padding-block--md text-center">
-                    <p class="font-size--base font-weight--md">Validez-vous votre auto-évaluation ?</p>
-                    <button type="button" class="btn btn-skilly btn--lg btn-rounded btn-blue font-weight--semibold" type="button" name="button" data-toggle="modal" data-target="#sendModal">Envoyer à mon manager</button>
+                <!-- devenir tuteur -->
+                <div class="padding-block--small">
+                    <div class="tutor-section no-border">
+                        <div class="padding-block--small">
+                            <p>Suite à votre évaluation vous avez été identifié comme tuteur potentiel sur des compétences.</p>
+                            <p><strong>Souhaitez-vous devenir tuteur ?</strong></p>
+                            <div class="survey-form">
+                                <form action="" method="post">
+                                    <div class="survey-question">
+                                        <p class="question">
+                                            <i class="fa fa-arrow-right"></i>
+                                            Réaliser un ouvrage béton à partir de banches de hauteur standard
+                                        </p>
+                                        <div class="radio-group">
+                                            <div class="radio-text">
+                                                <input type="radio" id="no-1" name="q1" value="no">
+                                                <label for="no-1">non</label>
+                                            </div>
+                                            <div class="radio-text">
+                                                <input type="radio" id="yes-1" name="q1" value="yes">
+                                                <label for="yes-1">oui</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="survey-question">
+                                        <p class="question">
+                                            <i class="fa fa-arrow-right"></i>
+                                            Réaliser les coffrages traditionnels simple (bois)
+                                        </p>
+                                        <div class="radio-group">
+                                            <div class="radio-text">
+                                                <input type="radio" id="no-2" name="q2" value="no">
+                                                <label for="no-2">non</label>
+                                            </div>
+                                            <div class="radio-text">
+                                                <input type="radio" id="yes-2" name="q2" value="yes">
+                                                <label for="yes-2">oui</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="padding-block--base">
+                                        <p class="text-center font-size--xs">Après validation, vous pouvez modifier vos choix dans votre page profil.</p>
+                                    </div>
+                                    <div class="text-center padding-block--sm">
+                                        <button type="button" class="btn btn-skilly btn--lg btn-green btn-rounded font-weight--semibold" data-dismiss="modal">Valider</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
             </div>
 
         </div>
 
-    </main>
+    </div>
+
+</main>
 
 </div>
 
