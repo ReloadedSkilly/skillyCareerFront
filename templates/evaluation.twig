@@ -6,12 +6,9 @@ invision:3.1 & 3.2
 {% extends 'layout.twig' %}
 
 {% block content %}
-<div class="container padding-block--base">
+<div class="container padding-block--base padding-container-bottom">
 
     <main class="relative">
-
-        <!-- tips box -->
-        {% include 'partials/tips.twig' %}
 
         <div class="bg--white padding-content">
 
@@ -20,7 +17,7 @@ invision:3.1 & 3.2
 
                 <!-- user info -->
                 <div class="user-header display-flex align-items--center">
-                    <img src="./assets/img/icons/profil_small.svg" alt="welcome screen 1">
+                    <img src="./assets/img/icons/profil_small.svg" alt="profil">
                     <div class="user-info">
                         <h1 class="font-size--sm">{{user.firstname}} {{user.lastname}}<br/> {{user.job}}</h1>
                     </div>
@@ -46,10 +43,11 @@ invision:3.1 & 3.2
             <!-- title section -->
             <div class="section-title text-center padding-block--base">
 
-                <img src="./assets/img/onboarding1.svg" alt="capacité relationnelles">
+                <img src="./assets/img/capR.svg" alt="capacité relationnelles">
                 <h3 class="font-size--base">Capacités relationnelles</h3>
                 <p class="font-size--sm darkgray">Capacité à communiquer avec vos collègues,<br/> avec votre hiérarchie.</p>
-
+                <!-- tips box -->
+                {% include 'partials/tips.twig' %}
             </div>
 
             <!-- evaluation table -->

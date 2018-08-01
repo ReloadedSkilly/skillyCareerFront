@@ -1,18 +1,39 @@
 .profil-section{
+    .table-legends{
+        top: 60%;
+    }
     h2{
         padding-bottom: 15px;
         padding-top:36px;
     }
-    .collapse-button{
-        border-top: 1px solid @darkGrayLine;
-        border-bottom: 1px solid @darkGrayLine;
+    .collapse-wrapper{
+        border-bottom: 1px solid #979797;
         padding: 15px;
+        &:first-of-type{
+            border-top: 1px solid @darkGrayLine;
+        }
+    }
+    .collapse-button{
         position: relative;
         .btn-delete{
             position: absolute;
-            right: 0;
+            right: 10%;
             top: 50%;
             .translateY(-50%);
+        }
+        .btn-favori{
+            position: absolute;
+            right: 80px;
+            top: 50%;
+            .translateY(-50%);
+        }
+        .hours{
+            position: absolute;
+            right: 15%;
+            top: 50%;
+            .translateY(-50%);
+            color: @darkGray;
+            font-size: 16px;
         }
     }
 }
@@ -31,7 +52,8 @@
     }
     .area-wrapper{
         span{
-            padding-right: 58px;
+            width: 180px;
+            display: inline-block;
         }
     }
 }
@@ -62,6 +84,7 @@
             font-weight: bold;
             line-height: 18px;
             padding:7px 15px;
+            margin-top: 10px;
             img{
                 padding-right: 10px;
             }

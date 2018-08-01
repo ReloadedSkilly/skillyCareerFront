@@ -6,7 +6,7 @@ invision:4.7
 {% extends 'layout.twig' %}
 
 {% block content %}
-<div class="container padding-block--base">
+<div class="container padding-block--base padding-container-bottom">
 
     <main>
 
@@ -31,7 +31,7 @@ invision:4.7
                 <div class="padding-block--md">
 
                     <!-- title section favoris-->
-                    <div class="section-title title-icon text-center padding-block--base">
+                    <div class="section-title title-icon text-center padding-block--small">
 
                         <p class="font-size--base font-weight--md">
                             <img src="./assets/img/icons/favoris.svg" alt="favoris title">
@@ -43,58 +43,122 @@ invision:4.7
                     <!-- evoluer group -->
                     <div class="profil-section">
                         <h2 class="text-left font-size--sm font-weight--semibold">Evoluer</h2>
+
+                        <!-- loop evoluer -->
+                        {% for ejob in ejobs %}
+
                         <div class="collapse-wrapper">
                             <div class="collapse-button">
-                                <a class="font-size--sm font-weight--semibold blue collapsed" role="button" data-toggle="collapse" href="#metier1" aria-expanded="false" aria-controls="capacityRelation">
-                                    Grutier à tour mobile H/F
-                                    <p class="font-weight--normal">Boulogne Billancourt, Île-de-France</p>
+                                <a class="font-size--sm font-weight--semibold blue collapsed" role="button" data-toggle="collapse" href="#ejob{{loop.index}}" aria-expanded="false" aria-controls="capacityRelation">
+                                    {{ejob[0]}}
+                                    <p class="font-weight--normal">{{ejob[1]}}</p>
                                 </a>
                                 <button class="btn btn-icon btn-reset btn-delete" type="button" name="button">
-                                    <i class="fa fa-times green font-size--sm"></i>
+                                    <img src="./assets/img/icons/croix.svg" alt="delete">
                                 </button>
                             </div>
-                            <div class="collapse" id="metier1">
-
+                            <div class="collapse job-detail" id="ejob{{loop.index}}">
+                                <div class="job-container">
+                                    <div class="job-header padding-block--small">
+                                        <div class="job-info">
+                                            <span class="green">Type de contrat</span>
+                                            <span>CDI</span>
+                                        </div>
+                                        <div class="job-info">
+                                            <span class="green">Temps de travail</span>
+                                            <span>Temps complet</span>
+                                        </div>
+                                        <div class="job-info">
+                                            <span class="green">Statut</span>
+                                            <span>Ingénieur et cadre</span>
+                                        </div>
+                                    </div>
+                                    <div class="job-description">
+                                        <p class="green">Descripton de la mission</p>
+                                        <div class="content-description">
+                                            <p>Seul ou au sein d’une équipe d’encadrement, Vous assurez la gestion et l’organisation de votre chantier dans le respect des objectifs techniques, financiers et commerciaux.</p>
+                                            <p>A ce titre, vous êtes en charge de :</p>
+                                            <ul>
+                                                <li>Préparer les travaux en participant à l’organisation et à la mise en place des moyens techniques, matériels et humains</li>
+                                                <li>Consulter des fournisseurs et des sous-traitants</li>
+                                                <li>Garantir la sécurité de vos équipes et la prévention sur les chantiers.</li>
+                                                <li>Veiller au respect de l’enveloppe financière et contractuelle.</li>
+                                                <li>Garantir la sécurité de vos équipes et la prévention sur les chantiers.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="padding-block--md text-center send-manager">
+                                    <p>Cette offre vous intéresse-t-elle ?</p>
+                                    <div class="padding-block--small">
+                                        <button type="button" name="button" class="btn btn-skilly btn--lg btn-blue btn-rounded font-weight--semibold" id="sendBtn">informer mon manager</button>
+                                    </div>
+                                </div>
+                                <!-- send button validate -->
+                                <div class="padding-block--md text-center confirm-block">
+                                    <p class="font-size--base font-weight--md padding-block--small">Confirmez-vous l’envoi à votre manager ?</p>
+                                    <button type="button" class="btn btn-skilly btn--lg btn-rounded btn-green font-weight--semibold" type="button" name="button" id="cancelBtn">non</button>
+                                    <button type="button" class="btn btn-skilly btn--lg btn-rounded btn-green font-weight--semibold" type="button" name="button" id="validateBtn">oui</button>
+                                </div>
                             </div>
                         </div>
+
+                        {% endfor %}
+
                     </div>
 
                     <!-- bouger group -->
                     <div class="profil-section">
                         <h2 class="text-left font-size--sm font-weight--semibold">Bouger</h2>
+
+                        <!-- loop bouger -->
+                        {% for bjob in bjobs %}
+
                         <div class="collapse-wrapper">
                             <div class="collapse-button">
-                                <a class="font-size--sm font-weight--semibold blue collapsed" role="button" data-toggle="collapse" href="#metier1" aria-expanded="false" aria-controls="capacityRelation">
-                                    Grutier à tour mobile H/F
-                                    <p class="font-weight--normal">Boulogne Billancourt, Île-de-France</p>
+                                <a class="font-size--sm font-weight--semibold blue collapsed" role="button" data-toggle="collapse" href="#bjob{{loop.index}}" aria-expanded="false" aria-controls="capacityRelation">
+                                    {{bjob[0]}}
+                                    <p class="font-weight--normal">{{bjob[1]}}</p>
                                 </a>
                                 <button class="btn btn-icon btn-reset btn-delete" type="button" name="button">
-                                    <i class="fa fa-times green font-size--sm"></i>
+                                    <img src="./assets/img/icons/croix.svg" alt="delete">
                                 </button>
                             </div>
-                            <div class="collapse" id="metier1">
+                            <div class="collapse" id="bjob{{loop.index}}">
 
                             </div>
                         </div>
+
+                        {% endfor %}
+
                     </div>
 
                     <!-- perfectionner group -->
                     <div class="profil-section">
                         <h2 class="text-left font-size--sm font-weight--semibold">Me perfectionner dans mon métier</h2>
+
+                        <!-- loop perfectionner -->
+
+                        {% for skill in skills %}
+
                         <div class="collapse-wrapper">
                             <div class="collapse-button">
-                                <a class="font-size--sm font-weight--semibold blue collapsed" role="button" data-toggle="collapse" href="#metier1" aria-expanded="false" aria-controls="capacityRelation">
-                                    Grutier à tour mobile H/F
-                                    <p class="font-weight--normal">Boulogne Billancourt, Île-de-France</p>
+                                <a class="font-size--sm font-weight--semibold blue collapsed" role="button" data-toggle="collapse" href="#skill{{loop.index}}" aria-expanded="false" aria-controls="capacityRelation">
+                                    <p class="font-weight--normal">{{skill[0]}}</p>
                                 </a>
                                 <button class="btn btn-icon btn-reset btn-delete" type="button" name="button">
-                                    <i class="fa fa-times green font-size--sm"></i>
+                                    <img src="./assets/img/icons/croix.svg" alt="delete">
                                 </button>
+                                <span class="hours">
+                                    {{skill[1]}}h
+                                </div>
                             </div>
-                            <div class="collapse" id="metier1">
+                            <div class="collapse" id="skill{{loop.index}}">
 
                             </div>
-                        </div>
+
+                        {% endfor %}
+
                     </div>
 
                 </div>
@@ -112,15 +176,22 @@ invision:4.7
 
                     </div>
 
+                    <!-- loop alerts -->
+                    {% for alert in alerts %}
+
                     <div class="alert-item">
                         <div class="area-wrapper font-size--sm">
-                            <span class="green font-weight--semibold">Alerte région</span>
-                            Hauts de France
+                            <span class="green font-weight--semibold">Alerte {{alert[0]}}</span>
+                            {{alert[1]}}
                         </div>
                         <button class="btn btn-icon btn-reset btn-delete" type="button" name="button">
-                            <i class="fa fa-times green font-size--sm"></i>
+                            <img src="./assets/img/icons/croix.svg" alt="delete">
                         </button>
                     </div>
+
+                    {% endfor %}
+
+
                 </div>
 
                 <!-- create alert form -->
@@ -153,12 +224,13 @@ invision:4.7
 
                 <!-- title section tuteurs-->
 
-                <div class="section-title title-icon text-center padding-block--md">
+                <div class="section-title title-icon text-center ">
 
-                    <p class="font-size--base font-weight--md">
+                    <p class="font-size--base font-weight--md padding-block--md">
                         <img src="./assets/img/icons/tuteur.svg" alt="tuteurs title">
                         Devenir tuteur
                     </p>
+
                 </div>
 
                 <!-- devenir tuteur -->
@@ -221,5 +293,18 @@ invision:4.7
 </main>
 
 </div>
+<script type="text/javascript">
 
+jQuery(document).ready(function($){
+
+    // collapse background
+    var collapseBtn = $('.collapse-button a');
+
+    collapseBtn.click(function() {
+        $(this).parents('.collapse-wrapper').toggleClass('bg--verylightgray');
+    });
+
+});
+
+</script>
 {% endblock %}

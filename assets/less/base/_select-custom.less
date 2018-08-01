@@ -1,42 +1,117 @@
-.select2-container--default {
-    .select2-selection--single{
-        height: 50px;
-        border: 1px solid #979797;
-        .border-radius(2px);
-        .select2-selection__rendered{
-            line-height: 50px;
-            font-size: 18px;
-            font-weight: 500;
-        }
-        .select2-selection__arrow{
-            height: 50px;
-            color: @anthracite;
-        }
-        .select2-selection__placeholder{
-            color: @anthracite;
-            font-weight: 500;
-            font-size: 18px;
-            padding-left:22px;
-        }
-    }
+.select2-container--default .select2-results__option--highlighted[aria-selected]{
+    background-color: @veryLightGray;
+    color: @anthracite;
 }
-.select2-container--default{
-    &.select2-container--open {
+
+.profil-card{
+    .select2-container--default {
         .select2-selection--single{
-            .select2-selection__arrow b {
-            border-color: transparent transparent @anthracite transparent;
-            border-width: 0 4px 5px 4px;
+            height: 50px;
+            border: 1px solid #979797;
+            .border-radius(2px);
+            .select2-selection__rendered{
+                line-height: 50px;
+                font-size: 18px;
+                font-weight: 500;
+            }
+            .select2-selection__arrow{
+                height: 50px;
+                color: @anthracite;
+            }
+            .select2-selection__placeholder{
+                color: @anthracite;
+                font-weight: 500;
+                font-size: 18px;
+                padding-left:22px;
             }
         }
     }
-    .select2-results__option--highlighted[aria-selected] {
-        background-color: @grayishBlue;
-        color: white;
-        font-weight: 500;
+    .select2-container--default{
+        &.select2-container--open {
+            .select2-selection--single{
+                .select2-selection__arrow b {
+                border-color: transparent transparent @anthracite transparent;
+                border-width: 0 4px 5px 4px;
+                }
+            }
+        }
+        .select2-results__option--highlighted[aria-selected] {
+            background-color: @grayishBlue;
+            color: white;
+            font-weight: 500;
+            font-size: 18px;
+        }
+    }
+    .select2-results__option[aria-selected]{
         font-size: 18px;
+        color: @anthracite;
     }
 }
-.select2-results__option[aria-selected]{
-    font-size: 18px;
-    color: @anthracite;
+
+.search-section{
+    .select2-results{
+        height: 40px;
+        width: 500px;
+    }
+    .select2-container--default {
+        .select2-search--inline {
+            .select2-search__field{
+                line-height: 40px;
+            }
+        }
+        .select2-selection--single{
+            height: 40px;
+            width: 500px;
+            margin:0 auto;
+            position: relative;
+            .border-radius(0px);
+            .select2-selection__rendered{
+                line-height: 40px;
+                font-size: 16px;
+                font-weight: normal;
+                color: @grayishBlue;
+            }
+            .select2-selection__placeholder{
+                color: @grayishBlue;
+                font-size: 16px;
+                padding-left:10px;
+            }
+            .select2-selection__arrow{
+                height: 40px;
+                width: 40px;
+                b{
+                    background-image:url('../img/icons/recherche.svg');
+                    height: 40px;
+                    width: 40px;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    border:none;
+                    margin:0;
+                    top: 0;
+                    right: 0;
+                    left: 0;
+                }
+            }
+        }
+    }
+    .select2-container--default{
+        &.select2-container--open {
+            .select2-selection--single{
+                .select2-selection__arrow b {
+                border-color: transparent transparent @anthracite transparent;
+                border-width: 0 4px 5px 4px;
+                }
+            }
+        }
+        .select2-results__option--highlighted[aria-selected] {
+            background-color: @grayishBlue;
+            color: white;
+            font-weight: 500;
+            font-size: 18px;
+        }
+    }
+    .select2-results__option[aria-selected]{
+        font-size: 18px;
+        color: @anthracite;
+    }
 }

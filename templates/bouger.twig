@@ -1,12 +1,12 @@
 {#
 Page - bouger
-invision:5.1 à 5.5
+invision:5.0 à 5.5
 #}
 
 {% extends 'layout.twig' %}
 
 {% block content %}
-<div class="container padding-block--base">
+<div class="container padding-block--base padding-container-bottom">
 
     <main>
 
@@ -15,7 +15,131 @@ invision:5.1 à 5.5
             {% include 'partials/profil-menu.twig' %}
 
             <div class="padding-content">
-                <h1>Conducteur de travaux</h1>
+
+                <div class="padding-block--small">
+
+                    <h1 class="font-weight--semibold font-size--base blue text-uppercase">Conducteur de travaux</h1>
+
+                    <!-- form mobility -->
+                    <div class="form-mobility padding-block--small">
+                        <p class="font-size--xs">Fonctionnalités à venir</p>
+                        <form class="display-flex" action="" method="post">
+                            <p class="darkgray">Demander une mobilité dans le groupe Vinci ?</p>
+                            <div class="custom-radio green">
+                                <div class="radio-group">
+                                    <label>
+                                        oui
+                                        <input type="radio" name="radio-group">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <div class="radio-group">
+                                    <label>
+                                        non
+                                        <input type="radio" name="radio-group">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+
+                <!-- search section -->
+                <div class="search-section padding-block--md">
+                    <h2 class="text-center font-size--base font-weight--md">Rechercher les offres disponibles</h2>
+                    <form role="search">
+                        <div class="search-control">
+                            <select class="custom-select">
+                                <option></option>
+                                {% for city in cities %}
+                                <option value="{{city}}">{{city}}</option>
+                                {% endfor %}
+                            </select>
+                            <!-- <img src="./assets/img/icons/recherche.svg" alt="search btn"> -->
+                        </div>
+                        <div class="text-center">
+                            <button class="btn btn-icon alert-btn" type="button" name="button">
+                                <img src="./assets/img/icons/alerte_small.svg" alt="alert">
+                                Créer une alerte pour cette recherche
+                            </button>
+                        </div>
+                    </form>
+                    <div class="search-result padding-block--small">
+                        <div class="count font-size--base font-weight--semibold">
+                            7 offres
+                        </div>
+
+                        <!-- loop jobs -->
+                        {% for job in jobs %}
+
+                        <div class="collapse-wrapper">
+                            <div class="collapse-button">
+                                <a class="font-size--sm font-weight--semibold blue collapsed" role="button" data-toggle="collapse" href="#metier{{loop.index}}" aria-expanded="false" aria-controls="capacityRelation">
+                                    {{job[0]}}
+                                    <p class="font-weight--normal">{{job[1]}}</p>
+                                    <button class="btn btn-icon btn-reset btn-favori" type="button" name="button" data-toggle="tooltip" data-placement="top" title="Marquer comme favori">
+
+                                        {% if job[2] == false %}
+                                            <img src="./assets/img/icons/favori_off.svg" alt="favori">
+                                        {% else %}
+                                            <img src="./assets/img/icons/favori_on.svg" alt="favori">
+                                        {% endif %}
+
+                                    </button>
+                                </a>
+                            </div>
+                            <div class="collapse job-detail" id="metier{{loop.index}}">
+                                <div class="job-container">
+                                    <div class="job-header padding-block--small">
+                                        <div class="job-info">
+                                            <span class="green">Type de contrat</span>
+                                            <span>CDI</span>
+                                        </div>
+                                        <div class="job-info">
+                                            <span class="green">Temps de travail</span>
+                                            <span>Temps complet</span>
+                                        </div>
+                                        <div class="job-info">
+                                            <span class="green">Statut</span>
+                                            <span>Ingénieur et cadre</span>
+                                        </div>
+                                    </div>
+                                    <div class="job-description">
+                                        <p class="green">Descripton de la mission</p>
+                                        <div class="content-description">
+                                            <p>Seul ou au sein d’une équipe d’encadrement, Vous assurez la gestion et l’organisation de votre chantier dans le respect des objectifs techniques, financiers et commerciaux.</p>
+                                            <p>A ce titre, vous êtes en charge de :</p>
+                                            <ul>
+                                                <li>Préparer les travaux en participant à l’organisation et à la mise en place des moyens techniques, matériels et humains</li>
+                                                <li>Consulter des fournisseurs et des sous-traitants</li>
+                                                <li>Garantir la sécurité de vos équipes et la prévention sur les chantiers.</li>
+                                                <li>Veiller au respect de l’enveloppe financière et contractuelle.</li>
+                                                <li>Garantir la sécurité de vos équipes et la prévention sur les chantiers.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="padding-block--md text-center send-manager">
+                                    <p>Cette offre vous intéresse-t-elle ?</p>
+                                    <div class="padding-block--small">
+                                        <button type="button" name="button" class="btn btn-skilly btn--lg btn-blue btn-rounded font-weight--semibold" id="sendBtn">informer mon manager</button>
+                                    </div>
+                                </div>
+                                <!-- send button validate -->
+                                <div class="padding-block--md text-center confirm-block">
+                                    <p class="font-size--base font-weight--md padding-block--small">Confirmez-vous l’envoi à votre manager ?</p>
+                                    <button type="button" class="btn btn-skilly btn--lg btn-rounded btn-green font-weight--semibold" type="button" name="button" id="cancelBtn">non</button>
+                                    <button type="button" class="btn btn-skilly btn--lg btn-rounded btn-green font-weight--semibold" type="button" name="button" id="validateBtn">oui</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        {% endfor %}
+                    </div>
+                </div>
+
             </div>
 
         </div>
@@ -23,5 +147,45 @@ invision:5.1 à 5.5
     </main>
 
 </div>
+<script type="text/javascript">
 
+jQuery(document).ready(function($){
+
+    // select 2
+    $('.custom-select').select2({
+        placeholder: "Villes, régions...",
+        width:'100%',
+    });
+
+    // collapse background
+    var collapseBtn = $('.collapse-button a');
+
+    collapseBtn.click(function() {
+        $(this).parents('.collapse-wrapper').toggleClass('bg--verylightgray');
+    });
+
+    //tooltips
+    $('[data-toggle="tooltip"]').tooltip();
+
+    // button send
+    var sendBtn=$('#sendBtn');
+    var sendBlock=$('.send-manager');
+    var confirmBlock=$('.confirm-block');
+
+    sendBtn.click(function(){
+        sendBlock.toggle();
+        confirmBlock.toggle();
+    });
+
+    // cancel send
+    var cancelBtn=$('#cancelBtn');
+
+    cancelBtn.click(function(){
+        sendBlock.toggle();
+        confirmBlock.toggle();
+    });
+
+});
+
+</script>
 {% endblock %}

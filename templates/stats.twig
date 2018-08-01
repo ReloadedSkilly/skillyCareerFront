@@ -6,7 +6,7 @@ invision:4.5 & 4.6
 {% extends 'layout.twig' %}
 
 {% block content %}
-<div class="container padding-block--base">
+<div class="container padding-block--base padding-container-bottom">
 
     <main class="relative">
 
@@ -31,7 +31,7 @@ invision:4.5 & 4.6
                 <!-- devenir tuteur -->
                 <div class="padding-block--md">
                     <div class="tutor-section">
-                        <div class="section-title text-center">
+                        <div class="section-title text-center padding-block--small">
                             <p class="font-size--base font-weight--md">
                                 <img src="./assets/img/icons/tuteur.svg" alt="favoris title">
                                 Devenir tuteur
@@ -94,13 +94,13 @@ invision:4.5 & 4.6
                     </h2>
                 </div>
 
-                <div class="graph-content">
+                <div class="graph-content padding-block--small">
                     <img class="img-responsive" src="./assets/img/graph.png" alt="graph demo">
                 </div>
 
 
                 <!-- details evaluation -->
-                <div class="section-title text-center padding-block--base relative">
+                <div class="section-title text-center padding-block--md relative">
                     <h2 class="font-size--base font-weight--md">
                         Détail de votre évaluation
                     </h2>
@@ -145,9 +145,18 @@ invision:4.5 & 4.6
                                         <th>3</th>
                                     </tr>
                                 </thead>
+
+                                <!-- loop each capacity -->
                                 {% for capacity in capacities %}
+
                                 <tr>
-                                    <td>{{capacity}}</td>
+
+                                    <td>
+                                        {{capacity[1]}}
+                                    </td>
+
+                                    <!-- loop level choice -->
+                                    {% for i in 0..4%}
                                     <td>
                                         <div class="custom-radio">
                                             <label>
@@ -155,61 +164,17 @@ invision:4.5 & 4.6
                                                 <span class="checkmark"></span>
                                             </label>
                                         </div>
-                                        <div class="marker">
+                                        <div class="marker {% if capacity[2][i] %}checked {% endif %}">
                                             <span>
                                             </span>
                                         </div>
                                     </td>
-                                    <td>
-                                        <div class="custom-radio">
-                                            <label>
-                                                <input type="radio" name="radio-group-{{loop.index}}">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                        </div>
-                                        <div class="marker">
-                                            <span>
-                                            </span>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="custom-radio">
-                                            <label>
-                                                <input type="radio" name="radio-group-{{loop.index}}">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                        </div>
-                                        <div class="marker">
-                                            <span>
-                                            </span>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="custom-radio">
-                                            <label>
-                                                <input type="radio" name="radio-group-{{loop.index}}">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                        </div>
-                                        <div class="marker">
-                                            <span>
-                                            </span>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="custom-radio">
-                                            <label>
-                                                <input type="radio" name="radio-group-{{loop.index}}">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                        </div>
-                                        <div class="marker checked">
-                                            <span>
-                                            </span>
-                                        </div>
-                                    </td>
+                                    {% endfor %}
+
                                 </tr>
+
                                 {% endfor %}
+                                
                             </table>
 
                         </div>

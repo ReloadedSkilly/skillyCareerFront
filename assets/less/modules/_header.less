@@ -1,7 +1,14 @@
 .main-menu{
-    padding:12px 0;
+    height: 50px;
+    overflow: hidden;
+    ul{
+        line-height: 50px;
+    }
     li{
         padding:0 25px;
+        &.active{
+            background-color: @green;
+        }
         a{
             color: white;
             font-size: 18px;
@@ -12,4 +19,8 @@
             }
         }
     }
+}
+
+.main-header{
+    height: 50px;
 }

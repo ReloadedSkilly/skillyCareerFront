@@ -1,12 +1,12 @@
 {#
-Page - perfectionner
-invision:6.1 & 6.2
+Page - bouger
+invision:6.1 à 6.2
 #}
 
 {% extends 'layout.twig' %}
 
 {% block content %}
-<div class="container padding-block--base">
+<div class="container padding-block--base padding-container-bottom">
 
     <main>
 
@@ -15,7 +15,81 @@ invision:6.1 & 6.2
             {% include 'partials/profil-menu.twig' %}
 
             <div class="padding-content">
-                <h1>Formations</h1>
+                <div class="title-section">
+                    <h1 class="font-weight--semibold font-size--base blue text-uppercase display-inline-flex">Formations</h1>
+                    <div class="float-right">
+                        <a download="" class="btn btn-skilly btn-rounded font-weight--semibold btn-download">
+                            <img src="./assets/img/icons/telecharger.svg" alt="close button">
+                            Télécharger la liste
+                        </a>
+                    </div>
+                </div>
+
+                <div class="profil-section padding-block--small">
+                    <h2 class="text-left font-size--sm font-weight--semibold blue">Communiquer avec efficacité</h2>
+
+                    {% for skill in skills %}
+
+                    <div class="collapse-wrapper">
+                        <div class="collapse-button">
+                            <a class="font-size--sm font-weight--semibold blue collapsed" role="button" data-toggle="collapse" href="#skill{{loop.index}}" aria-expanded="false" aria-controls="capacityRelation">
+                                <p class="font-weight--normal">{{skill[0]}}</p>
+                            </a>
+                            <button class="btn btn-icon btn-reset btn-favori" type="button" name="button" data-toggle="tooltip" data-placement="top" title="Marquer comme favori">
+
+                                {% if skill[1] == false %}
+                                    <img src="./assets/img/icons/favori_off.svg" alt="favori">
+                                {% else %}
+                                    <img src="./assets/img/icons/favori_on.svg" alt="favori">
+                                {% endif %}
+
+                            </button>
+                            <div class="hours">
+                                {{skill[2]}}h
+                            </div>
+                        </div>
+                        <div class="collapse job-detail" id="skill{{loop.index}}">
+                            <div class="job-container">
+                                <div class="job-description">
+                                    <p class="green">Objectif</p>
+                                    <div class="content-description">
+                                        <p>Se positionner en tant que manager de proximité : rôle et missions.</p>
+                                        <p>Adapter sa communication aux situations.</p>
+                                        <p>Donner des directives claires pour déléguer efficacement</p>
+                                        <p>Motiver et mieux gérer son équipe.</p>
+                                    </div>
+                                </div>
+                                <div class="job-description padding-block--small">
+                                    <p class="green">Programme</p>
+                                    <div class="content-description">
+                                        <ul>
+                                            <li>Préparer les travaux en participant à l’organisation et à la mise en place des moyens techniques, matériels et humains</li>
+                                            <li>Consulter des fournisseurs et des sous-traitants</li>
+                                            <li>Garantir la sécurité de vos équipes et la prévention sur les chantiers.</li>
+                                            <li>Veiller au respect de l’enveloppe financière et contractuelle.</li>
+                                            <li>Garantir la sécurité de vos équipes et la prévention sur les chantiers.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="padding-block--md text-center send-manager">
+                                <p>Cette offre vous intéresse-t-elle ?</p>
+                                <div class="padding-block--small">
+                                    <button type="button" name="button" class="btn btn-skilly btn--lg btn-blue btn-rounded font-weight--semibold" id="sendBtn">informer mon manager</button>
+                                </div>
+                            </div>
+                            <!-- send button validate -->
+                            <div class="padding-block--md text-center confirm-block">
+                                <p class="font-size--base font-weight--md padding-block--small">Confirmez-vous l’envoi à votre manager ?</p>
+                                <button type="button" class="btn btn-skilly btn--lg btn-rounded btn-green font-weight--semibold" type="button" name="button" id="cancelBtn">non</button>
+                                <button type="button" class="btn btn-skilly btn--lg btn-rounded btn-green font-weight--semibold" type="button" name="button" id="validateBtn">oui</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    {% endfor %}
+
+                </div>
             </div>
 
         </div>
@@ -23,5 +97,39 @@ invision:6.1 & 6.2
     </main>
 
 </div>
+<script type="text/javascript">
 
+jQuery(document).ready(function($){
+
+    // collapse background
+    var collapseBtn = $('.collapse-button a');
+
+    collapseBtn.click(function() {
+        $(this).parents('.collapse-wrapper').toggleClass('bg--verylightgray');
+    });
+
+    //tooltips
+    $('[data-toggle="tooltip"]').tooltip();
+
+    // button send
+    var sendBtn=$('#sendBtn');
+    var sendBlock=$('.send-manager');
+    var confirmBlock=$('.confirm-block');
+
+    sendBtn.click(function(){
+        sendBlock.toggle();
+        confirmBlock.toggle();
+    });
+
+    // cancel send
+    var cancelBtn=$('#cancelBtn');
+
+    cancelBtn.click(function(){
+        sendBlock.toggle();
+        confirmBlock.toggle();
+    });
+
+});
+
+</script>
 {% endblock %}

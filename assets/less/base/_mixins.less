@@ -32,6 +32,13 @@
 	display: ~"-ms-@{display}"; // IE11
 	display: @display;
 }
+
+.display-inline-flex(@display: inline-flex) {
+	display: ~"-webkit-@{display}";
+	display: ~"-ms-@{display}box"; // IE10 uses -ms-flexbox
+	display: ~"-ms-@{display}"; // IE11
+	display: @display;
+}
 .justify-content(@position) {
   -webkit-justify-content: @position;
       -ms-justify-content: @position;

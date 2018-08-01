@@ -1,0 +1,126 @@
+.search-section{
+    h2{
+        padding-bottom: 20px;
+    }
+    .search-control{
+        height: 40px;
+        width: 500px;
+        margin:0 auto;
+    }
+    .alert-btn{
+        text-transform: uppercase;
+        background-color: white;
+        height: 36px;
+        color: @green;
+        font-weight: bold;
+        line-height: 18px;
+        padding:7px 15px;
+        .border-radius(3px);
+        border:2px solid @green;
+        margin-top: 30px;
+        img{
+            padding-right: 10px;
+        }
+    }
+}
+
+.proposition-container{
+    padding:25px 45px;
+    .title-proposition{
+        font-size: 15px;
+        h4{
+            display: inline-block;
+            vertical-align: super;
+            font-weight: normal;
+        }
+        .counter{
+            height: 26px;
+            width: 26px;
+            border-width: 2px;
+            border-style: solid;
+            border-radius: 2px;
+            display: inline-block;
+            position: relative;
+            margin-right: 10px;
+            &.green{
+                border-color:@green;
+            }
+            &.orange{
+                border-color:@orange;
+            }
+            &.blue{
+                border-color:@blue;
+            }
+            span{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                .translate(-50%,-50%);
+            }
+        }
+    }
+    .content-description{
+        padding-left: 15px;
+    }
+}
+
+.job-container{
+    padding:45px;
+    .job-header{
+        text-align: center;
+    }
+    .job-info{
+        font-size: 16px;
+        display: inline-block;
+        padding:0 50px;
+        span{
+            display: block;
+            text-align: left;
+        }
+    }
+}
+.search-result{
+    .collapse-wrapper{
+        border-top: 1px solid @darkGrayLine;
+        padding: 15px;
+        &:last-of-type{
+            border-bottom: 1px solid @darkGrayLine!important;
+        }
+    }
+    .collapse-button{
+        position: relative;
+        .btn-favori{
+            position: absolute;
+            right: 80px;
+            top: 50%;
+            .translateY(-50%);
+        }
+
+    }
+}
+.content-description{
+    padding-top: 3px;
+    p{
+        font-size: 16px;
+    }
+    ul{
+        padding:16px 0;
+        li{
+            font-size: 16px;
+            position: relative;
+            padding-left: 16px;
+            &:before{
+                content:"";
+                background: @green;
+                height: 6px;
+                width: 6px;
+                position: absolute;
+                top: 50%;
+                left: 0%;
+                .border-radius(100%);
+                .translateY(-50%);
+
+            }
+        }
+    }
+}
