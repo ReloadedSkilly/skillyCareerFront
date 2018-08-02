@@ -1,10 +1,11 @@
+{% include 'partials/menu-responsive.twig' %}
 
 <!-- header -->
 <header class="main-header bg--verydarkblue">
-    <div class="container">
-        <div class="display-flex align-items--center justify-content--space-between">
+    <div class="container nopadding">
+        <div class="display-flex align-items--center justify-content--space-between menu-container">
             <!-- logo -->
-            <a href="/skillyCareerFront/">
+            <a href="/skillyCareerFront/?p=stats">
                 <img src="./assets/img/logo-white.svg" alt="logo">
             </a>
             <!-- menu -->
@@ -26,6 +27,14 @@
                     </li>
                 </ul>
             </nav>
+
+            <!-- repsonsive menu -->
+            <div class="responsive-menu">
+                <div class="menu-wrapper">
+                    <div class="hamburger-menu"></div>
+                </div>
+            </div>
+
         </div>
     </div>
 </header>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+    <title>8D6142BD-E926-405E-A974-20667E6F6834</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="ASSETS" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linejoin="round">
+        <g transform="translate(-46.000000, -258.000000)" id="eval" stroke="#FFFFFF" stroke-width="2">
+            <g transform="translate(47.000000, 259.000000)">
+                <path d="M22,11 C22,4.925 17.075,0 11,0 C4.925,0 0,4.925 0,11 C0,17.075 4.925,22 11,22 C17.075,22 22,17.075 22,11 Z" id="Stroke-1" stroke-linecap="round"></path>
+                <polyline id="Stroke-3" points="1 16 1.2 16 11 16 21 16"></polyline>
+                <path d="M11,15.66 L16,7" id="Stroke-5" stroke-linecap="round"></path>
+            </g>
+        </g>
+    </g>
+</svg>

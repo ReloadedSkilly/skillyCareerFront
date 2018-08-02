@@ -4,19 +4,40 @@
     }
     &--base{
         padding:30px 0;
+        @media(max-width: @screen-xs){
+            padding: 15px 0;
+        }
     }
     &--md{
         padding:50px 0;
+        @media(max-width: @screen-md){
+            padding:25px 0;
+        }
     }
     &--lg{
         padding:100px 0;
+        @media(max-width: @screen-xs){
+            padding:50px 0;
+        }
     }
 }
 .padding-content{
     padding:30px;
     .border-radius(2px);
+    @media(max-width: @screen-xs){
+        padding:15px;
+        background: @lightBlue;
+    }
+    &.bg--white{
+        @media(max-width: @screen-xs){
+            background: none;
+        }
+    }
 }
 
 .padding-container-bottom{
     padding-bottom: 76px;
+    @media(max-width: @screen-xs){
+        padding-bottom: 35px;
+    }
 }

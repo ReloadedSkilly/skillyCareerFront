@@ -1,4 +1,10 @@
 .profil-menu{
+    @media(max-width: @screen-xs){
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        z-index: 9999;
+    }
     li{
         width: 205px;
         height: 50px;
@@ -6,6 +12,7 @@
         text-align: center;
         margin-right: 1px;
         position: relative;
+        padding: 0 10px;
         &.active{
             background-color: @green;
         }
@@ -20,12 +27,13 @@
             .display-flex();
             .justify-content(center);
             .align-items(center);
-            img{
-                padding-right: 20px;
-                padding-left: 10px;
-            }
             span{
                 text-align: left;
+                padding-left: 10px;
+                padding-right: 10px;
+                @media(max-width: @screen-xs){
+                    display: none;
+                }
             }
         }
     }

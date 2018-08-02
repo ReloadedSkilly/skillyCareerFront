@@ -1,10 +1,15 @@
-    <button class="tips-side btn btn-icon btn-reset collapsed" id="#collapseTipsBtn" type="button" name="button" data-toggle="collapse" data-target="#tipsBox">
-        <img src="./assets/img/icons/interrogation.svg" alt="tips button">
-    </button>
+<button class="tips-side btn btn-icon btn-reset collapsed " id="#collapseTipsBtn" type="button" name="button" data-toggle="collapse" data-target="#tipsBox">
+    <img src="./assets/img/icons/interrogation.svg" alt="tips button">
+    <div class="responsive-tips-side white">
+        <span>Comment choisir mon niveau ?</span>
+        <i class="fa fa-chevron-circle-right"></i>
+    </div>
+</button>
+
 <div id="tipsBox" class="collapse">
     <div class="tips-header">
         <h6>Comment choisir mon niveau ?</h6>
-        <button class="btn btn-icon btn-reset" type="button" name="button" data-toggle="collapse" data-target="#tipsBox">
+        <button class="btn btn-icon btn-reset collapse-level" type="button" name="button" data-toggle="collapse" data-target="#tipsBox">
             <img src="./assets/img/icons/close_window.svg" alt="close button">
         </button>
     </div>
@@ -31,5 +36,11 @@
                 <p>Je suis expert sur cette activité</p>
             </li>
         </ul>
+        <div class="responsive-close-btn white">
+            <button class="btn btn-icon btn-reset collapse-level" type="button" name="button" data-toggle="collapse" data-target="#tipsBox">
+                <i class="fa fa-times-circle"></i>
+                <span>J'ai compris</span>
+            </button>
+        </div>
     </div>
 </div>

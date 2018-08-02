@@ -22,6 +22,7 @@ invision:3.1 & 3.2
                         <h1 class="font-size--sm">{{user.firstname}} {{user.lastname}}<br/> {{user.job}}</h1>
                     </div>
                 </div>
+
                 <!-- step by step -->
                 <div class="evaluation-step display-flex align-items--center">
                     <h2 class="text-uppercase blue font-size--base font-weight--semibold">Auto-évaluation</h2>
@@ -46,70 +47,68 @@ invision:3.1 & 3.2
                 <img src="./assets/img/capR.svg" alt="capacité relationnelles">
                 <h3 class="font-size--base">Capacités relationnelles</h3>
                 <p class="font-size--sm darkgray">Capacité à communiquer avec vos collègues,<br/> avec votre hiérarchie.</p>
+
                 <!-- tips box -->
                 {% include 'partials/tips.twig' %}
+
             </div>
 
             <!-- evaluation table -->
-            <div class="padding-block--md">
-                <table class="evaluation-grid">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>NC</th>
-                            <th>0</th>
-                            <th>1</th>
-                            <th>2</th>
-                            <th>3</th>
-                        </tr>
-                    </thead>
-                    {% for capacity in capacities %}
-                    <tr>
-                        <td>{{capacity}}</td>
-                        <td>
-                            <div class="custom-radio">
-                                <label>
-                                    <input type="radio" name="radio-group-{{loop.index}}">
-                                    <span class="checkmark"></span>
-                                </label>
+
+            <form action="" method="post">
+
+                <div class="custom-table evaluation-grid">
+
+                    <div class="table-header">
+                        {% set levels = ['NC',0,1,2,3] %}
+                        <div class="table-cell-empty"></div>
+                        <div class="table-level">
+                            {% for level in levels %}
+
+                            <div class="table-cell">{{level}}</div>
+
+                            {% endfor %}
+                        </div>
+
+                    </div>
+
+                    <div class="table-body">
+
+                        {% set count = 0 %}
+
+                        <!-- loop capacities -->
+                        {% for capacity in capacities %}
+
+                        <div class="table-line">
+
+                            <div class="table-title">
+                                {{capacity}}
                             </div>
-                        </td>
-                        <td>
-                            <div class="custom-radio">
-                                <label>
-                                    <input type="radio" name="radio-group-{{loop.index}}">
-                                    <span class="checkmark"></span>
-                                </label>
+                            <div class="table-answer">
+
+                                {% for i in 0..4%}
+                                <div class="custom-radio">
+                                    <span class="level-responsive">{{levels[i]}}</span>
+                                    <label>
+                                        <input type="radio" name="radio-group-{{count}}">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                {% endfor %}
+
+                                {% set count = count +1 %}
+
                             </div>
-                        </td>
-                        <td>
-                            <div class="custom-radio">
-                                <label>
-                                    <input type="radio" name="radio-group-{{loop.index}}">
-                                    <span class="checkmark"></span>
-                                </label>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="custom-radio">
-                                <label>
-                                    <input type="radio" name="radio-group-{{loop.index}}">
-                                    <span class="checkmark"></span>
-                                </label>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="custom-radio">
-                                <label>
-                                    <input type="radio" name="radio-group-{{loop.index}}">
-                                    <span class="checkmark"></span>
-                                </label>
-                            </div>
-                        </td>
-                    </tr>
-                    {% endfor %}
-                </table>
-            </div>
+
+                        </div>
+
+                        {% endfor %}
+
+                    </div>
+
+                </div>
+
+            </form>
 
             <div class="padding-block--md text-center">
                 <a class="btn btn-skilly btn--lg btn-rounded btn-blue font-weight--semibold" href="/skillyCareerFront/?p=evaluation-summary">Etape suivante</a>
@@ -121,5 +120,32 @@ invision:3.1 & 3.2
 
 </div>
 
+<script type="text/javascript">
+
+jQuery(document).ready(function($){
+
+    if ($(window).width() > 480 ) {
+
+        // position helpers box
+        function resizeHelper(){
+    		var windowWidth = $(document).innerWidth();
+    	    var contentWidth = $('.container').innerWidth();
+    	    var position=(windowWidth-contentWidth)/2;
+
+    	    $('#tipsBox').css('right',position-14);
+    	    $('.tips-side').css('right',position-14);
+    	}
+
+        resizeHelper();
+
+        $(window).on('resize', function(){
+            resizeHelper();
+        });
+
+    }
+
+});
+
+</script>
 
 {% endblock %}

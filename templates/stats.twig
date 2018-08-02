@@ -10,9 +10,6 @@ invision:4.5 & 4.6
 
     <main class="relative">
 
-        <!-- tips box -->
-        {% include 'partials/tips.twig' %}
-
         <div class="bg--white">
 
             <!-- sub-menu -->
@@ -44,7 +41,7 @@ invision:4.5 & 4.6
                                 <form action="" method="post">
                                     <div class="survey-question">
                                         <p class="question">
-                                            <i class="fa fa-arrow-right"></i>
+                                            <img src="./assets/img/icons/fleche_green.svg" alt="graph demo">
                                             Réaliser un ouvrage béton à partir de banches de hauteur standard
                                         </p>
                                         <div class="radio-group">
@@ -60,7 +57,7 @@ invision:4.5 & 4.6
                                     </div>
                                     <div class="survey-question">
                                         <p class="question">
-                                            <i class="fa fa-arrow-right"></i>
+                                            <img src="./assets/img/icons/fleche_green.svg" alt="graph demo">
                                             Réaliser les coffrages traditionnels simple (bois)
                                         </p>
                                         <div class="radio-group">
@@ -104,6 +101,8 @@ invision:4.5 & 4.6
                     <h2 class="font-size--base font-weight--md">
                         Détail de votre évaluation
                     </h2>
+                    <!-- tips box -->
+                    {% include 'partials/tips.twig' %}
                     <!-- legends -->
                     <div class="table-legends">
                         <div class="legend-item green-square">
@@ -115,111 +114,134 @@ invision:4.5 & 4.6
                     </div>
                 </div>
 
-                <!-- capacité relationnelle collapse -->
-                <div class="summary-content">
-                    <div class="collapse-wrapper clear-float">
+
+                <div class="summary-content summary-stats">
+
+                    <!-- capacité relationnelle collapse -->
+                    <div class="collapse-wrapper">
                         <div class="collapse-button">
                             <a class="font-size--sm font-weight--semibold blue collapsed" role="button" data-toggle="collapse" href="#capacityRelation" aria-expanded="false" aria-controls="capacityRelation">
                                 Capacités relationnelles
-                                <!-- indicators -->
-                                <div class="count-wrapper">
-                                    <div class="count-item green-square">
-                                        <span>4</span>
-                                    </div>
-                                    <div class="count-item orange-square">
-                                        <span>1</span>
-                                    </div>
-                                </div>
                             </a>
+                            <div class="count-wrapper">
+                                <div class="count-item green-square">
+                                    <span>4</span>
+                                </div>
+                                <div class="label-responsive">Compétences maitrisées</div>
+
+                                <div class="count-item orange-square">
+                                    <span>1</span>
+                                </div>
+                                <div class="label-responsive">Compétences à renforcer</div>
+
+                            </div>
                         </div>
-                        <div class="collapse clear-float nopadding" id="capacityRelation">
-                            <!-- evaluation grid (for editing) -->
-                            <table class="evaluation-grid">
-                                <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th>NC</th>
-                                        <th>0</th>
-                                        <th>1</th>
-                                        <th>2</th>
-                                        <th>3</th>
-                                    </tr>
-                                </thead>
+                        <div class="collapse clear-float" id="capacityRelation">
 
-                                <!-- loop each capacity -->
-                                {% for capacity in capacities %}
+                            <!-- evaluation grid -->
 
-                                <tr>
+                            <div class="custom-table evaluation-grid">
 
-                                    <td>
-                                        {{capacity[1]}}
-                                    </td>
+                                <div class="table-header">
 
-                                    <!-- loop level choice -->
-                                    {% for i in 0..4%}
-                                    <td>
-                                        <div class="custom-radio">
-                                            <label>
-                                                <input type="radio" name="radio-group-{{loop.index}}">
-                                                <span class="checkmark"></span>
-                                            </label>
+                                    {% set levels = ['NC',0,1,2,3] %}
+                                    <div class="table-cell-empty"></div>
+                                    <div class="table-level">
+                                        {% for level in levels %}
+
+                                        <div class="table-cell">{{level}}</div>
+
+                                        {% endfor %}
+                                    </div>
+
+                                </div>
+
+                                <div class="table-body">
+
+                                    {% set count = 0 %}
+
+                                    <!-- loop capacities -->
+                                    {% for capacity in capacities %}
+
+                                    <div class="table-line">
+
+                                        <div class="table-title">
+                                            {{capacity[1]}}
                                         </div>
-                                        <div class="marker {% if capacity[2][i] %}checked {% endif %}">
-                                            <span>
-                                            </span>
+                                        <div class="table-answer">
+
+                                            {% for i in 0..4 %}
+
+                                            <div class="marker {% if capacity[2][i] %}checked{% endif %}">
+                                                <span></span>
+                                                <span class="level-responsive">{{levels[i]}}</span>
+                                            </div>
+
+                                            {% endfor %}
+
+                                            {% set count = count +1 %}
+
                                         </div>
-                                    </td>
+
+                                    </div>
+
                                     {% endfor %}
 
-                                </tr>
+                                </div>
 
-                                {% endfor %}
-                                
-                            </table>
+                            </div>
 
                         </div>
                     </div>
 
-                    <!-- capacité organisationnelle collapse -->
-                    <div class="collapse-wrapper bg--verylightgrey">
+                    <!-- capacités organisationnelles -->
+                    <div class="collapse-wrapper">
                         <div class="collapse-button">
                             <a class="font-size--sm font-weight--semibold blue collapsed" role="button" data-toggle="collapse" href="#capacityOrga" aria-expanded="false" aria-controls="capacityOrga">
-                                Capacités organisationnelle
-                                <!-- indicators -->
-                                <div class="count-wrapper">
-                                    <div class="count-item green-square">
-                                        <span>4</span>
-                                    </div>
-                                    <div class="count-item orange-square">
-                                        <span>1</span>
-                                    </div>
-                                </div>
+                                Capacités organisationnelles
                             </a>
+                            <div class="count-wrapper">
+                                <div class="count-item green-square">
+                                    <span>4</span>
+                                </div>
+                                <div class="label-responsive">Compétences maitrisées</div>
+
+                                <div class="count-item orange-square">
+                                    <span>1</span>
+                                </div>
+                                <div class="label-responsive">Compétences à renforcer</div>
+
+                            </div>
                         </div>
                         <div class="collapse clear-float" id="capacityOrga">
 
                         </div>
+
                     </div>
 
-                    <!-- Compétences techniques collapse -->
-                    <div class="collapse-wrapper bg--verylightgrey">
+                    <!-- compétences techniques  -->
+                    <div class="collapse-wrapper">
                         <div class="collapse-button">
                             <a class="font-size--sm font-weight--semibold blue collapsed" role="button" data-toggle="collapse" href="#compTech" aria-expanded="false" aria-controls="compTech">
                                 Compétences techniques
-                                <!-- indicators -->
-                                <div class="count-wrapper">
-                                    <div class="count-item green-square">
-                                        <span>4</span>
-                                    </div>
-                                    <div class="count-item orange-square">
-                                        <span>1</span>
-                                    </div>
-                                </div>
                             </a>
+                            <div class="count-wrapper">
+                                <div class="count-item green-square">
+                                    <span>4</span>
+                                </div>
+                                <div class="label-responsive">Compétences maitrisées</div>
+
+                                <div class="count-item orange-square">
+                                    <span>1</span>
+                                </div>
+                                <div class="label-responsive">Compétences à renforcer</div>
+
+                            </div>
                         </div>
                         <div class="collapse clear-float" id="compTech">
 
                         </div>
+
                     </div>
 
                 </div>
@@ -242,12 +264,16 @@ invision:4.5 & 4.6
 <script type="text/javascript">
 jQuery(document).ready(function($){
 
-    // collapse background
-    var collapseBtn = $('.collapse-button a');
+    if ($(window).width() > 480) {
 
-    collapseBtn.click(function() {
-        $(this).parents('.collapse-wrapper').toggleClass('bg--verylightgray');
-    });
+        // collapse background
+        var collapseBtn = $('.collapse-button a');
+
+        collapseBtn.click(function() {
+            $(this).parents('.collapse-wrapper').toggleClass('bg--verylightgray');
+        });
+
+    };
 
 });
 

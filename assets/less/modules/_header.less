@@ -1,11 +1,17 @@
 .main-menu{
     height: 50px;
     overflow: hidden;
+    @media(max-width: @screen-xs){
+        display: none;
+    }
     ul{
         line-height: 50px;
     }
     li{
         padding:0 25px;
+        @media(max-width: @screen-md){
+            padding:0 15px;
+        }
         &.active{
             background-color: @green;
         }
@@ -17,10 +23,26 @@
                 .transition(all 0.3s ease);
                 text-decoration: none;
             }
+            @media(max-width: @screen-md){
+                font-size: 14px;
+            }
+        }
+        &:last-of-type{
+            padding-right: 0;
         }
     }
 }
-
+.menu-container{
+    @media(max-width: @screen-xs){
+        line-height: 50px;
+        padding:0 20px;
+    }
+}
 .main-header{
     height: 50px;
+}
+.header-home{
+    @media(max-width: @screen-md){
+        text-align: center;
+    }
 }

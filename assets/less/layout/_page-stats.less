@@ -14,8 +14,16 @@
     .align-items(center);
     border-top: 1px solid @green;
     padding:15px 0;
+    @media(max-width: @screen-xs){
+        display: block;
+    }
     &:first-of-type{
         border-top: none;
+    }
+    .radio-group{
+        @media(max-width: @screen-xs){
+            text-align: center;
+        }
     }
     .question{
         color: @green;
@@ -24,6 +32,21 @@
         .radio-text{
             &:first-of-type{
                 margin-right: 5px;
+            }
+        }
+    }
+}
+.summary-stats{
+    .table-line{
+        &:last-of-type{
+            border-bottom: none;
+        }
+    }
+    .collapse-button{
+        a{
+            @media(max-width: @screen-xs){
+                padding-bottom:10px;
+                border-bottom:1px solid @darkGrayLine;
             }
         }
     }

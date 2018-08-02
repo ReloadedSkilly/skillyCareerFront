@@ -14,8 +14,11 @@ $loader = new Twig_Loader_Filesystem(__DIR__ . '/templates');
 $twig = new Twig_Environment($loader, array(
     'cache' => __DIR__ . '/cache',
     // 'cache' => FALSE,
-    'debug' => TRUE
+    'debug' => TRUE,
 ));
+
+
+
 $twig->addExtension(new MyExtension());
 $twig->addExtension(new Twig_Extensions_Extension_Text());
 $twig->addGlobal('current_page', $page);

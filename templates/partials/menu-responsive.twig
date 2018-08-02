@@ -1,0 +1,34 @@
+<nav class="responsive-menu-content">
+    <div class="hamburger-menu"></div>
+    <div class="menu-info">
+        <h3 class="font-size--base white">
+
+        {{user.firstname}} {{user.lastname}}<br/>
+        {{user.job}}
+
+        </h3>
+
+    </div>
+    <ul>
+        <li class="{{ activeClass('profil') }}">
+            <img src="./assets/img/icons/profil.svg" alt="profil icons">
+            <a href="/skillyCareerFront/?p=profil">Mon profil</a>
+        </li>
+        <li class="{{ activeClass('profil') }}">
+            <img src="./assets/img/icons/alertes_white.svg" alt="alert icons">
+            <a href="">Mes alertes</a>
+        </li>
+        <li>
+            <img src="./assets/img/icons/eval.svg" alt="eval icons">
+            <a href="#">Mes évaluations</a>
+        </li>
+        <li>
+            <img src="./assets/img/icons/ddes.svg" alt="files icons">
+            <a href="#">Mes demandes</a>
+        </li>
+    </ul>
+    <button class="btn btn-icon grayishblue btn-turnoff" type="button" name="button">
+        <img src="./assets/img/icons/turn_off.svg" alt="turn off button">
+        Me déconnecter
+    </button>
+</nav>

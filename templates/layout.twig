@@ -4,13 +4,13 @@
 <!-- head -->
 {% include 'partials/head.twig' %}
 
-<body>
+<body class="{{ isPage('home') }}">
 
     <!-- header -->
     {% block header %}
 
         {% include 'partials/header.twig' %}
-        
+
     {% endblock %}
 
     <!-- content -->

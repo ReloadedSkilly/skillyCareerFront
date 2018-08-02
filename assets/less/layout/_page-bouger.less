@@ -1,9 +1,21 @@
 .form-mobility{
+    form{
+        .display-flex();
+        @media(max-width: @screen-xs){
+            display: block;
+        }
+    }
     .custom-radio{
         padding-left: 25px;
+        @media(max-width: @screen-xs){
+            padding-left: 0;
+        }
         .display-flex();
         .radio-group{
             padding: 0 20px;
+            @media(max-width: @screen-xs){
+                padding:10px 20px 0 0;
+            }
         }
         label{
             padding-left:25px;

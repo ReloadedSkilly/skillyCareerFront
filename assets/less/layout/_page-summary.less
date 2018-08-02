@@ -2,22 +2,43 @@
     .collapse-wrapper{
         border-bottom: 1px solid @darkGrayLine;
         padding:20px 0 0;
+        @media(max-width: @screen-xs){
+            border:none;
+        }
         &:first-of-type{
             border-top: 1px solid @darkGrayLine;
+            @media(max-width: @screen-xs){
+                border-top:none;
+            }
         }
         .collapse-button{
             padding:0 0 20px;
+            position: relative;
+            @media(max-width: @screen-xs){
+                padding:0;
+            }
             a{
                 padding-left: 10px;
             }
         }
         .collapse.in{
-            padding:15px 0;
+            padding:0;
             .transition(0.1s all);
+            @media(max-width: @screen-xs){
+                padding:0;
+            }
+        }
+    }
+    .edit-evaluation{
+        float: right;
+        padding:10px 0;
+        @media(max-width: @screen-xs){
+            float: none;
+            text-align: center;
+            padding-bottom: 30px;
         }
     }
     .btn-edit{
-        padding-top:15px;
         padding-right: 15px;
         background: #ffffff00;
         img{
@@ -37,12 +58,16 @@
         }
     }
     .evaluation-grid{
+        @media(max-width: @screen-xs){
+            padding:10px 0px 0px;
+        }
         td{
             border-top: 1px solid #D4D4D4;
             border-bottom: 1px solid #D4D4D4;
         }
         .marker{
             position: relative;
+            width: 20%;
             span{
                 &:before{
                     content:"";
@@ -54,6 +79,9 @@
                     left: 50%;
                     .translate(-50%,-50%);
                     .border-radius(9px);
+                    @media(max-width: @screen-xs){
+                        top:35px;
+                    }
                 }
             }
             &.checked{

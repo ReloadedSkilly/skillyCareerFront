@@ -12,14 +12,15 @@ class MyExtension extends Twig_Extension
   public function getFunctions()
   {
     return array(
-      new Twig_SimpleFunction('activeClass', array($this, 'activeClass'), array('needs_context' => TRUE))
-    );
+      new Twig_SimpleFunction('activeClass', array($this, 'activeClass'), array('needs_context' => TRUE)),
+      new Twig_SimpleFunction('isPage', array($this, 'isPage'), array('needs_context' => TRUE))
+  );
   }
 
-  public function markdownParse($value)
-  {
-    return \Michelf\MarkdownExtra::defaultTransform($value);
-  }
+  // public function markdownParse($value)
+  // {
+  //   return \Michelf\MarkdownExtra::defaultTransform($value);
+  // }
 
   public function activeClass(array $context, $page)
   {
@@ -27,4 +28,12 @@ class MyExtension extends Twig_Extension
       return 'active';
     }
   }
+
+  public function isPage(array $context, $page)
+  {
+    if (isset($context['current_page']) && $context['current_page'] === $page) {
+      return $page;
+    }
+  }
+
 }

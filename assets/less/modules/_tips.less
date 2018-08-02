@@ -1,20 +1,50 @@
 .tips-side{
     height: 40px;
     width: 40px;
-    position: absolute;
-    right: -13px;
-    top: 45%;
+    position: fixed;
+    right: 41px;
+    top: 100px;
     background-color: @darkGreen;
     .border-radius(0px);
     z-index: 999;
+    @media(max-width: 790px){
+        position: relative;
+        width: 100%;
+        margin-top: 30px;
+        right: 0;
+        top:0;
+        &:after{
+            display: none;
+        }
+    }
     &:not(.collapsed){
         display: none;
+    }
+    .responsive-tips-side{
+        display: none;
+        font-weight: bold;
+        span{
+            float: left;
+            padding-left:20px;
+        }
+        @media(max-width: 790px){
+            display: block;
+        }
+        i{
+            position: absolute;
+            top: 50%;
+            right: 5%;
+            .translateY(-50%);
+        }
     }
     img{
         position: absolute;
         top: 50%;
         left: 50%;
         .translate(-50%,-50%);
+        @media(max-width: 790px){
+            display: none;
+        }
     }
     &:after{
         content: "";
@@ -29,10 +59,19 @@
 #tipsBox{
     width: 300px;
     background-color: @green;
-    position: absolute;
+    position: fixed;
     right: -13px;
     top: 20%;
     z-index: 999;
+    @media(max-width:790px){
+        position: relative;
+        right: 0;
+        margin:30px auto 0;
+        width: 100%;
+        &:after{
+            display: none;
+        }
+    }
     &:after{
         content: "";
         border: 9px outset transparent;
@@ -53,9 +92,17 @@
             font-weight: bold;
             font-size: 15px;
         }
+        .collapse-level{
+            @media(max-width: 790px){
+                display: none;
+            }
+        }
     }
     .tips-body{
         padding:10px 16px;
+        @media(max-width: 790px){
+            padding:16px;
+        }
         li{
             .display-flex();
             color: white;
@@ -66,6 +113,10 @@
                 line-height: 18px;
                 padding-left: 15px;
                 width: 250px;
+                text-align: left;
+                @media(max-width: 790px){
+                    width: 100%;
+                }
             }
             span{
                 opacity: 0.5;
@@ -74,5 +125,22 @@
                 width: 22px;
             }
         }
+    }
+}
+.responsive-close-btn{
+    display: none;
+    padding: 15px 0;
+    @media(max-width: 790px){
+        display: block;
+    }
+    span,i{
+        width: 100%;
+        display: block;
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+    }
+    span{
+        padding-top: 10px;
     }
 }

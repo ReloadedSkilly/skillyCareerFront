@@ -1,12 +1,38 @@
 .profil-card{
-    width:650px;
+    max-width:650px;
     margin:0 auto;
     padding:55px;
+    @media(max-width: @screen-md){
+        padding:25px 10px;
+        width: 95%;
+    }
+    h3{
+        @media(max-width: @screen-xs){
+            text-align: center;
+        }
+    }
+    .d-block{
+        @media(max-width: @screen-xs){
+            text-align: center;
+        }
+    }
+    img{
+        @media(max-width: @screen-xs){
+            display: none;
+        }
+    }
 }
 .profil-info{
     padding-left:65px;
+    @media(max-width: @screen-xs){
+        padding: 0;
+        width: 100%;
+    }
     .select2{
         margin:20px 0;
+        @media(max-width: @screen-md){
+            width:100%!important;
+        }
         .select2-selection__arrow b{
             border-color: @anthracite transparent transparent transparent;
             margin-left:-20px;

@@ -5,5 +5,5 @@ RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.php [L]
-RewriteRule ^(?:[^/]*/)*([^/.]+\.(?:jpe?g|gif|bmp|png|tiff|css|js))$ /assets/$1 [R=301,L,NC]
+RewriteCond $1 !^(index\.php|assets|assets/css|assets/js|assets/ficheros|assets/img|robots\.txt)
 </IfModule>
