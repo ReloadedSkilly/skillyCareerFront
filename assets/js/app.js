@@ -1,4 +1,6 @@
 jQuery(document).ready(function($){
+
+	// responsive menu hamburger
 	var menuContent=$('.responsive-menu-content');
 
 	$('.hamburger-menu').on('click', function() {
@@ -7,6 +9,5 @@ jQuery(document).ready(function($){
 		$('body').toggleClass('overflow-hidden');
 	});
 
-	
 
 });
