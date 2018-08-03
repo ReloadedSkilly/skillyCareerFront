@@ -1,0 +1,42 @@
+.tutor-section{
+    max-width: 795px;
+    margin: 0 auto;
+    border: 2px solid #13C9A0;
+    .border-radius(5px);
+    padding:28px;
+}
+.survey-form{
+    padding:20px 0;
+}
+.survey-question{
+    .display-flex();
+    .justify-content(space-between);
+    .align-items(center);
+    border-top: 1px solid @green;
+    padding:15px 0;
+    @media(max-width: 800px){
+        display: block;
+    }
+    &:first-of-type{
+        border-top: none;
+    }
+    .radio-group{
+        @media(max-width:800px){
+            text-align: center;
+            padding:10px 0;
+        }
+    }
+    .radio-text{
+        &:last-of-type{
+            margin-left: 5px;
+            @media(max-width: 800px){
+                margin-left: 10px;
+            }
+        }
+    }
+    .question{
+        color: @green;
+        font-size: 16px;
+        font-weight: 500;
+    }
+}

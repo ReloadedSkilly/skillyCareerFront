@@ -1,0 +1,101 @@
+{#
+Page - detail jobs from page evoluer
+invision:7.3
+#}
+
+{% extends 'layout.twig' %}
+
+{% block content %}
+
+<div class="container padding-block--base padding-container-bottom">
+
+    <main>
+
+        <div class="bg--white">
+
+            {% include 'partials/profil-menu.twig' %}
+
+            <div class="padding-content">
+
+                <div class="profil-section evoluer-section">
+
+                    <div class="counter padding-block--small relative">
+                        <h2 class="text-left font-size--base font-weight--semibold">Gruitier à tour: <span class="font-weight--md">{{ jobs|length }} postes ouverts</span></h2>
+                    </div>
+
+                    {% for job in jobs %}
+
+                    <div class="collapse-wrapper">
+                        <div class="collapse-button">
+                            <a class="font-size--sm font-weight--semibold blue collapsed" role="button" data-toggle="collapse" href="#job{{loop.index}}" aria-expanded="false" aria-controls="capacityRelation">
+                                <p class="font-weight--normal blue">{{job[0]}}</p>
+                            </a>
+                            <button class="btn btn-icon btn-reset btn-favori" type="button" name="button" data-toggle="tooltip" data-placement="top" title="Marquer comme favori">
+
+                                {% if job[2] == false %}
+                                    <img src="./assets/img/icons/favori_off.svg" alt="favori">
+                                {% else %}
+                                    <img src="./assets/img/icons/favori_on.svg" alt="favori">
+                                {% endif %}
+
+                            </button>
+                        </div>
+                        <div class="collapse job-detail" id="job{{loop.index}}">
+                            <div class="job-container">
+                                <div class="job-header padding-block--small">
+                                    <div class="job-info">
+                                        <span class="green">Type de contrat</span>
+                                        <span>CDI</span>
+                                    </div>
+                                    <div class="job-info">
+                                        <span class="green">Temps de travail</span>
+                                        <span>Temps complet</span>
+                                    </div>
+                                    <div class="job-info">
+                                        <span class="green">Statut</span>
+                                        <span>Ingénieur et cadre</span>
+                                    </div>
+                                </div>
+                                <div class="job-description">
+                                    <p class="green">Descripton de la mission</p>
+                                    <div class="content-description">
+                                        <p>Seul ou au sein d’une équipe d’encadrement, Vous assurez la gestion et l’organisation de votre chantier dans le respect des objectifs techniques, financiers et commerciaux.</p>
+                                        <p>A ce titre, vous êtes en charge de :</p>
+                                        <ul>
+                                            <li>Préparer les travaux en participant à l’organisation et à la mise en place des moyens techniques, matériels et humains</li>
+                                            <li>Consulter des fournisseurs et des sous-traitants</li>
+                                            <li>Garantir la sécurité de vos équipes et la prévention sur les chantiers.</li>
+                                            <li>Veiller au respect de l’enveloppe financière et contractuelle.</li>
+                                            <li>Garantir la sécurité de vos équipes et la prévention sur les chantiers.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {% endfor %}
+
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+<script type="text/javascript">
+
+jQuery(document).ready(function($){
+
+    // collapse background
+    var collapseBtn = $('.collapse-button a');
+
+    collapseBtn.click(function() {
+        $(this).parents('.collapse-wrapper').toggleClass('bg--verylightgray');
+    });
+
+});
+
+</script>
+{% endblock %}

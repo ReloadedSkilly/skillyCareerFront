@@ -182,4 +182,20 @@ switch ($page) {
         );
         echo $twig->render('evoluer.twig', $values);
         break;
+        case 'job-detail':
+        $values = array(
+            'user' => array(
+                'firstname' => 'Jean',
+                'lastname' => 'Veuplusse',
+                'job' => 'Compagnon sur site nucléaire',
+            ),
+            'jobs'=> array(
+                '0' => ["Grutier à tour mobile H/F","Boulogne Billancourt, Île-de-France",true],
+                '1' => ["Conducteur de travaux","Boulogne Billancourt, Île-de-France",false],
+                '2' => ["Chef de chantier","Boulogne Billancourt, Île-de-France",true],
+                '3' => ["Ingénieur conducteur de travaux","Boulogne Billancourt, Île-de-France",false],
+            ),
+        );
+        echo $twig->render('job-detail.twig', $values);
+        break;
     }

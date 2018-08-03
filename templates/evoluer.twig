@@ -20,7 +20,7 @@ invision:7.1 à 7.2
                     <h1 class="font-weight--semibold font-size--base blue text-uppercase display-inline-flex">Changer de carrières</h1>
                 </div>
 
-                <div class="profil-section">
+                <div class="profil-section evoluer-section">
 
                     <div class="counter padding-block--small relative">
                         <h2 class="text-left font-size--base font-weight--semibold">5 propositions</h2>
@@ -82,7 +82,8 @@ invision:7.1 à 7.2
                                     </div>
                                     <div class="content-description">
                                         <ul class="orange">
-                                            <li>Préparer les travaux en participant à l’organisation et à la mise en place des moyens techniques, matériels et humains</li>
+                                            <li>Préparer les travaux en participant à l’organisation et à la mise en place des moyens techniques, matériels et humains
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -94,7 +95,7 @@ invision:7.1 à 7.2
                                         <h4>Postes ouverts</h4>
                                     </div>
                                     <div class="padding-block--small">
-                                        <a href="#" class="btn btn-skilly btn-blue btn--small show-post">voir les postes</a>
+                                        <a href="/skillyCareerFront/?p=job-detail" class="btn btn-skilly btn-blue btn--small font-weight--bold show-post">voir les postes</a>
                                     </div>
                                 </div>
                                 <div class="job-description">
@@ -102,21 +103,19 @@ invision:7.1 à 7.2
                                     <div class="padding-block--small">
                                         <p class="font-size--small">Suivant l’avancée du chantier le grutier déplace et distribue des matériaux divers : parpaings, échafaudages, autres outils ou machines de chantier, éléments de béton armé, murs préfabriqués, etc. Toujours des charges très lourdes. Il peut effectuer ces tâches sans visibilité en se fiant aux consignes de signaleurs.
                                         Bien que membre d’une équipe, il est isolé dans sa cabine qui peut être située à plus de 30 mètres du sol. Il communique avec ses signaleurs par radio ou par gestes lorsque la distance n’est pas trop grande.
-                                        Il peut effectuer des travaux de nuit et doit se déplacer en fonction des chantiers. Les consignes de sécurité à respecter sont strictes. Etre sujet au vertige interdit formellement l’exercice de ce métier.</p>                                        
+                                        Il peut effectuer des travaux de nuit et doit se déplacer en fonction des chantiers. Les consignes de sécurité à respecter sont strictes. Etre sujet au vertige interdit formellement l’exercice de ce métier.</p>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="padding-block--md text-center send-manager">
-                                <p>Cette offre vous intéresse-t-elle ?</p>
-                                <div class="padding-block--small">
-                                    <button type="button" name="button" class="btn btn-skilly btn--lg btn-blue btn-rounded font-weight--semibold" id="sendBtn">informer mon manager</button>
-                                </div>
+                                <p class="padding-block--small">Cette offre vous intéresse-t-elle ?</p>
+                                <button type="button" name="button" class="btn btn-skilly btn--lg btn-blue btn-rounded font-weight--semibold send-btn" id="sendBtn">informer mon manager</button>
                             </div>
                             <!-- send button validate -->
                             <div class="padding-block--md text-center confirm-block">
                                 <p class="font-size--base font-weight--md padding-block--small">Confirmez-vous l’envoi à votre manager ?</p>
-                                <button type="button" class="btn btn-skilly btn--lg btn-rounded btn-green font-weight--semibold" type="button" name="button" id="cancelBtn">non</button>
+                                <button type="button" class="btn btn-skilly btn--lg btn-rounded btn-green font-weight--semibold cancel-btn" type="button" name="button" id="cancelBtn">non</button>
                                 <button type="button" class="btn btn-skilly btn--lg btn-rounded btn-green font-weight--semibold" type="button" name="button" id="validateBtn">oui</button>
                             </div>
                         </div>
@@ -143,25 +142,22 @@ jQuery(document).ready(function($){
         $(this).parents('.collapse-wrapper').toggleClass('bg--verylightgray');
     });
 
-    //tooltips
-    $('[data-toggle="tooltip"]').tooltip();
-
     // button send
-    var sendBtn=$('#sendBtn');
+    var sendBtn=$('.send-btn');
     var sendBlock=$('.send-manager');
     var confirmBlock=$('.confirm-block');
 
     sendBtn.click(function(){
-        sendBlock.toggle();
-        confirmBlock.toggle();
+        $(this).parent().parent().find('.send-manager').toggle();
+        $(this).parent().parent().find('.confirm-block').toggle();
     });
 
     // cancel send
-    var cancelBtn=$('#cancelBtn');
+    var cancelBtn=$('.cancel-btn');
 
     cancelBtn.click(function(){
-        sendBlock.toggle();
-        confirmBlock.toggle();
+        $(this).parent().parent().find('.send-manager').toggle();
+        $(this).parent().parent().find('.confirm-block').toggle();
     });
 
 });

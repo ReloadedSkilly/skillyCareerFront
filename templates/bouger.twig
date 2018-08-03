@@ -57,7 +57,6 @@ invision:5.0 à 5.5
                                 <option value="{{city}}">{{city}}</option>
                                 {% endfor %}
                             </select>
-                            <!-- <img src="./assets/img/icons/recherche.svg" alt="search btn"> -->
                         </div>
                         <div class="text-center">
                             <button class="btn btn-icon alert-btn" type="button" name="button">
@@ -79,16 +78,16 @@ invision:5.0 à 5.5
                                 <a class="font-size--sm font-weight--semibold blue collapsed" role="button" data-toggle="collapse" href="#metier{{loop.index}}" aria-expanded="false" aria-controls="capacityRelation">
                                     {{job[0]}}
                                     <p class="font-weight--normal">{{job[1]}}</p>
-                                    <button class="btn btn-icon btn-reset btn-favori" type="button" name="button" data-toggle="tooltip" data-placement="top" title="Marquer comme favori">
-
-                                        {% if job[2] == false %}
-                                            <img src="./assets/img/icons/favori_off.svg" alt="favori">
-                                        {% else %}
-                                            <img src="./assets/img/icons/favori_on.svg" alt="favori">
-                                        {% endif %}
-
-                                    </button>
                                 </a>
+                                <button class="btn btn-icon btn-reset btn-favori" type="button" name="button" data-toggle="tooltip" data-placement="top" title="Marquer comme favori">
+
+                                    {% if job[2] == false %}
+                                        <img src="./assets/img/icons/favori_off.svg" alt="favori">
+                                    {% else %}
+                                        <img src="./assets/img/icons/favori_on.svg" alt="favori">
+                                    {% endif %}
+
+                                </button>
                             </div>
                             <div class="collapse job-detail" id="metier{{loop.index}}">
                                 <div class="job-container">
@@ -122,15 +121,13 @@ invision:5.0 à 5.5
                                     </div>
                                 </div>
                                 <div class="padding-block--md text-center send-manager">
-                                    <p>Cette offre vous intéresse-t-elle ?</p>
-                                    <div class="padding-block--small">
-                                        <button type="button" name="button" class="btn btn-skilly btn--lg btn-blue btn-rounded font-weight--semibold" id="sendBtn">informer mon manager</button>
-                                    </div>
+                                    <p class="padding-block--small">Cette offre vous intéresse-t-elle ?</p>
+                                    <button type="button" name="button" class="btn btn-skilly btn--lg btn-blue btn-rounded font-weight--semibold send-btn" id="sendBtn">informer mon manager</button>
                                 </div>
                                 <!-- send button validate -->
                                 <div class="padding-block--md text-center confirm-block">
                                     <p class="font-size--base font-weight--md padding-block--small">Confirmez-vous l’envoi à votre manager ?</p>
-                                    <button type="button" class="btn btn-skilly btn--lg btn-rounded btn-green font-weight--semibold" type="button" name="button" id="cancelBtn">non</button>
+                                    <button type="button" class="btn btn-skilly btn--lg btn-rounded btn-green font-weight--semibold cancel-btn" type="button" name="button" id="cancelBtn">non</button>
                                     <button type="button" class="btn btn-skilly btn--lg btn-rounded btn-green font-weight--semibold" type="button" name="button" id="validateBtn">oui</button>
                                 </div>
                             </div>
@@ -168,21 +165,21 @@ jQuery(document).ready(function($){
     $('[data-toggle="tooltip"]').tooltip();
 
     // button send
-    var sendBtn=$('#sendBtn');
+    var sendBtn=$('.send-btn');
     var sendBlock=$('.send-manager');
     var confirmBlock=$('.confirm-block');
 
     sendBtn.click(function(){
-        sendBlock.toggle();
-        confirmBlock.toggle();
+        $(this).parent().parent().find('.send-manager').toggle();
+        $(this).parent().parent().find('.confirm-block').toggle();
     });
 
     // cancel send
-    var cancelBtn=$('#cancelBtn');
+    var cancelBtn=$('.cancel-btn');
 
     cancelBtn.click(function(){
-        sendBlock.toggle();
-        confirmBlock.toggle();
+        $(this).parent().parent().find('.send-manager').toggle();
+        $(this).parent().parent().find('.confirm-block').toggle();
     });
 
 });

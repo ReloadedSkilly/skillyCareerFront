@@ -53,7 +53,10 @@
 }
 .responsive-menu{
     display: none;
-    position: relative;
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    .translateY(-50%);
     @media(max-width: @screen-xs){
         display: block;
     }
