@@ -5,6 +5,9 @@
     right: 41px;
     top: 25%;
     background-color: @darkGreen;
+    @media(max-width: 790px){
+        display: none;
+    }
     .border-radius(0px);
     z-index: 999;
     @media(max-width: 790px){
@@ -42,9 +45,9 @@
         top: 50%;
         left: 50%;
         .translate(-50%,-50%);
-        @media(max-width: 790px){
-            display: none;
-        }
+        // @media(max-width: 790px){
+        //     display: none;
+        // }
     }
     &:after{
         content: "";
@@ -56,12 +59,18 @@
         .rotate(45deg);
     }
 }
+.collapse-level-responsive{
+    display: none;
+    @media(max-width: @screen-xs){
+        display: block;
+    }
+}
 #tipsBox{
     width: 300px;
     background-color: @green;
     position: fixed;
     right: -13px;
-    top: 20%;
+    top: 25%;
     z-index: 999;
     @media(max-width:790px){
         position: relative;

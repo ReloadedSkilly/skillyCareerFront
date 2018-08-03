@@ -276,6 +276,26 @@ jQuery(document).ready(function($){
         downloadBlock.toggle();
     });
 
+    if ($(window).width() > 480 ) {
+
+        // position helpers box
+        function resizeHelper(){
+    		var windowWidth = $(document).innerWidth();
+    	    var contentWidth = $('.container').innerWidth();
+    	    var position=(windowWidth-contentWidth)/2;
+
+    	    $('#tipsBox').css('right',position-14);
+    	    $('.tips-side').css('right',position-14);
+    	}
+
+        resizeHelper();
+
+        $(window).on('resize', function(){
+            resizeHelper();
+        });
+
+    }
+
 });
 
 </script>

@@ -1,19 +1,21 @@
-<button class="tips-side btn btn-icon btn-reset collapsed " id="#collapseTipsBtn" type="button" name="button" data-toggle="collapse" data-target="#tipsBox">
+<button class="tips-side btn btn-icon btn-reset collapsed" id="#collapseTipsBtn" type="button" name="button" data-toggle="collapse" data-target="#tipsBox">
     <img src="./assets/img/icons/interrogation.svg" alt="tips button">
     <div class="responsive-tips-side white">
         <span>Comment choisir mon niveau ?</span>
-        <i class="fa fa-chevron-circle-right"></i>
     </div>
 </button>
 
-<div id="tipsBox" class="collapse">
+<div id="tipsBox" class="collapsed in">
     <div class="tips-header">
         <h6>Comment choisir mon niveau ?</h6>
         <button class="btn btn-icon btn-reset collapse-level" type="button" name="button" data-toggle="collapse" data-target="#tipsBox">
             <img src="./assets/img/icons/close_window.svg" alt="close button">
         </button>
+        <button class="btn btn-icon btn-reset collapse-level-responsive" type="button" name="button" data-toggle="collapse" data-target="#contentTips">
+            <img src="./assets/img/icons/close_window.svg" alt="close button">
+        </button>
     </div>
-    <div class="tips-body">
+    <div class="tips-body collapsed in" id="contentTips">
         <ul>
             <li>
                 <span>NC</span>
@@ -37,7 +39,7 @@
             </li>
         </ul>
         <div class="responsive-close-btn white">
-            <button class="btn btn-icon btn-reset collapse-level" type="button" name="button" data-toggle="collapse" data-target="#tipsBox">
+            <button class="btn btn-icon btn-reset collapse-level close-btn" type="button" name="button" data-toggle="collapse" data-target="#contentTips">
                 <i class="fa fa-times-circle"></i>
                 <span>J'ai compris</span>
             </button>

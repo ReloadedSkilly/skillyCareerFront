@@ -2,6 +2,16 @@
 @bar-height: 2px;
 @bar-spacing: 6px;
 
+.responsive-menu-wrapper{
+    height: 100%;
+    width: 100%;
+    padding: 50px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
 .responsive-menu-content{
     display: none;
     position: fixed;
@@ -14,18 +24,17 @@
     background: @veryDarkBlue;
     z-index: 99999;
     .menu-info {
-        padding: 50px 50px;
-        top: 10%;
         position: relative;
+        padding-bottom: 30px;
     }
     .hamburger-menu{
         position: absolute;
         right: 5%;
         top: 5%;
+        z-index: 99999;
     }
     .btn-turnoff{
         position: absolute;
-        padding:0 50px;
         bottom: 5%;
         font-size: 19px;
         img{
@@ -34,7 +43,6 @@
         }
     }
     ul{
-        padding:50px 50px;
         margin-top: 50px;
         @media(max-width: 320px){
             margin-top: 0;
